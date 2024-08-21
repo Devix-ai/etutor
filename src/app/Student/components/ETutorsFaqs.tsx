@@ -49,7 +49,7 @@ const ETutorsFaqs :React.FC = () => {
           }
       ];
   return (
-    <div>
+    <div className='pt-52 pl-20 lg:pl-0 mb:pl-0 mb:pt-16'>
       <FAQs faqData={eTutorFaqs} />
     </div>
   )

@@ -51,26 +51,26 @@ const TutorDetails = () => {
 {
 
     TutorsDetail.map((tutor)=>(
-  <div className='flex w-100 gap-12 border-b border-gray-600 py-12 mb:py-8 mb:flex-col mb:gap-4 '>
+  <div className='font-roboto flex w-100 gap-12 border-b justify-between border-[#3A187C] py-12 mb:py-8 mb:flex-col mb:gap-4 tb:flex-col'>
    
-        <div className='flex gap-8 justify-between items-center mb:justify-between mb:gap-4'>
-  <div className='w-40 h-40  rounded-2xl  mb:w-1/2 mb:h-auto'>
-        <Image src={tutor.img} alt='tutor' />
+        <div className='flex w-[35%] gap-8 justify-between items-center mb:justify-between mb:gap-4 mb:w-full'>
+  <div className='w-56 h-56  rounded-2xl  mb:w-1/3 mb:h-auto xl:w-40 xl:h-40 lg:w-36 lg:h-36'>
+        <Image src={tutor.img} className='w-full' alt='tutor' />
   </div>
-  <div className='flex flex-col gap-3 mb:gap-1'>
-      <h3 className='text-3xl font-extrabold mb:text-xl '>{tutor.name}</h3>
-      <p className='text-2xl text-customBlue mb:text-sm'>100+{tutor.bookings}</p>
-      <p className='text-2xl text font-extrabold mb:text-sm'>${tutor.sessionPrice}<span className='text-gray-600-500 font-thin'>/session</span></p>
+  <div className='flex text-[44px] flex-col gap-3  xl:text-4xl lg:text-2xl mb:gap-1 mb:text-3xl'>
+      <h3 className=' text-[#473171] font-extrabold mb:text-xl '>{tutor.name}</h3>
+      <p className=' text-customBlue mb:text-sm'>{tutor.bookings}+Booking</p>
+      <p className=' text font-extrabold mb:text-sm'>${tutor.sessionPrice}<span className='text-[#A297B7] font-thin'>/session</span></p>
   </div>
 </div>
-<div className='flex items-center justify-between gap-24 w-full mb:gap-4 mb:flex-col mb:justify-start mb:items-start'>
-  <div className='max-w-xl mb:w-full'> 
-      <h2 className='text-xl font-bold'>About me</h2>
-      <p className='text-base leading-5 mb:text-xs mb:leading-4'>
+<div className='flex items-center w-[60%] justify-between gap-24  mb:gap-4 mb:w-full mb:flex-col mb:justify-start mb:items-start tb:flex-row'>
+  <div className='w-[70%] mb:w-full text-[#473171]'> 
+      <h2 className='text-3xl  font-bold xl:text-2xl lg:text-lg mb:text-xl'>About me</h2>
+      <p className='text-2xl  mb:text-xs xl:text-lg lg:text-sm tb:text-xs ' >
          {tutor.description}
       </p>
   </div>
-  <div className='mb:w-1/2'>
+  <div className='w-[20%] mb:w-1/2'>
       <Image className='w-32 h-32' alt='award' src={tutor.award} />
   </div>
 </div>

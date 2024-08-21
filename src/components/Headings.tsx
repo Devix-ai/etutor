@@ -7,7 +7,7 @@ type propsType = {
 const Headings = ({ heading,className }: propsType) => {
   return (
     <div className=' '>
-      <h1 className={`mb:text-2xl text-5xl font-extrabold text-darkBlue ${className}`}>{heading}</h1>
+      <h1  className={`mb:text-2xl font-roboto text-[5rem] font-extrabold text-darkBlue lg:text-5xl  xl:text-6xl ${className}`}>{heading}</h1>
       {/* <p className='text-darkBlue text-base'>Have questions or need more information? Reach out to us at<Link href='' className='text-customBlue'> contact@etutor4me.com</Link></p> */}
     </div>
   )

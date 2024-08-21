@@ -14,10 +14,10 @@ const Page = () => {
     <div className='px-10 mb:px-5'>
 
       <HeroSection />
-    <WhyEtutorWithus />
-       <HowToStart/>
-    <TutorsComments/>
-        <ETutorsFaqs/>
+   <WhyEtutorWithus />
+        <HowToStart/>
+     <TutorsComments/>
+       <ETutorsFaqs/>
        <ParaDetails/>
     </div>
     <Footer/>

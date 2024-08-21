@@ -4,19 +4,19 @@ import img from "../../../../public/assets/homepage/studenthero.png"
 import Button from '@/components/Button'
 const HeroSection = () => {
   return (
-    <div className='w-full flex items-center h-lvh mb:flex-col mb:flex mb:items-center mb:text-center mb:justify-center mb:gap-10 mb:py-8' >
+    <div className=' font-roboto w-full flex items-center  h-lvh mb:flex-col mb:flex mb:items-center mb:text-center mb:justify-center mb:gap-10 mb:py-8 mb:h-full' >
       <div className='w-1/2 mb:w-full'>
-        <h2 className=' font-extrabold text-5xl mb:text-3xl'>
+        <h2 className=' font-extrabold text-6xl mb:text-3xl lg:text-4xl xl:text-4xl'>
           <span className='text-darkBlue'>Become an  </span>
           <span className='text-customOrange'>eTutor </span>
           <span className='text-darkBlue'>and join our  </span>
           <span className='text-customBlue'>Global Team </span>
 
         </h2>
-        <h3 className='text-black max-w-md mt-6 mb:mt-3 '>Transform Learning,Level Up, & Earn from anywhere</h3>
-        <div className='mt-10 mb:mt-6'>
+        <h3 className='text-[#473171] text-3xl font-bold  mt-8 mb:mt-3 xl:text-xl lg:text-x mb:text-lg'>Transform Learning, Level Up, & Earn from anywhere</h3>
+        <div className='pt-32 lg:pt-12 mb:pt-10'>
 
-          <Button className='' btnName='BECOME AN eTUTOR' />
+          <Button className='px-12 py-6 lg:px-10 lg:text-xl' btnName='BECOME AN eTUTOR' />
         </div>
       </div>
       <div className='w-1/2 mb:w-full '>

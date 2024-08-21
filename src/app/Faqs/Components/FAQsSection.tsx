@@ -61,36 +61,36 @@ const FAQsSection:React.FC = () => {
       ];
   return (
     <div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl mb:p-5 mb:rounded-xl mb:w-full '>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>Become an eTutor </h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl mb:p-5 mb:rounded-xl mb:w-full '>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>Become an eTutor </h2>
       <FAQs faqData={eTutorFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>For eTutors</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>For eTutors</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>Packages</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>Packages</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>Technical questions</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>Technical questions</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>General questions</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>General questions</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>Booking</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>Booking</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>Security</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>Security</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
-    <div className='py-32 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
-        <h2 className='text-darkBlue text-3xl font-extrabold pl-8 pb-4 mb:text-xl'>eTutor4Me</h2>
+    <div className='py-16 pl-4 bg-cardbg w-11/12 m-auto rounded-3xl my-56 mb:p-5 mb:rounded-xl mb:w-full mb:my-16'>
+        <h2 className='text-darkBlue text-3xl font-extrabold pl-10 pb-4 mb:text-xl'>eTutor4Me</h2>
       <FAQs faqData={PackageFaqs} display='hidden' />
     </div>
     </div>

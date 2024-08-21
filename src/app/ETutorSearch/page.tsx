@@ -12,9 +12,9 @@ const page = () => {
       <Navbar/>
     <div className='px-10 mb:px-5'>
       <FindEtutor/>
-      <SearchTutor/>
+       <SearchTutor/>
       <TutorDetails/>
-     <SeeTutorsList/> 
+    <SeeTutorsList/> 
     </div>
      <Footer/>
     </>

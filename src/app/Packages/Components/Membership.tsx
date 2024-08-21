@@ -14,7 +14,7 @@ const Membership = () => {
         expert-matched tutors, flexible lesson packages, and convenient scheduling options.
       </p>
     </div>
-    {/* <div className='w-4/5 m-auto gap-8 flex py-20'>
+    <div className='w-4/5 m-auto gap-8 flex py-20'>
         <div className='w-1/3 flex flex-col gap-3 items-center '>
             <Image className='w-20 h-20' alt='pricing' src={balance}/>
             <h2 className='text-darkBlue text-3xl font-extrabold'> Sensible Pricing</h2>
@@ -37,7 +37,7 @@ const Membership = () => {
                Enjoy the flexibility of rescheduling or choosing to complete your purchased sessions with a differnt eTutor
             </p>
         </div>
-    </div> */}
+    </div>
     </>
 
   )

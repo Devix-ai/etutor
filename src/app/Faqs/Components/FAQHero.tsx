@@ -46,18 +46,22 @@ const FAQHero = () => {
     },
    ] 
   return (
-    <div className='w-100'>
+    <div className='w-100 font-roboto'>
+      <div className='h-[80vh] flex justify-center items-center flex-col'>
+
+     
      <div className='w-3/4 m-auto flex items-center justify-center text-center my-10 '>
      <Headings className='text-6xl max-w-3xl' heading='Frequently Asked Questions'/>
         </div>
       
-      <p className='text-2xl text-center font-bold  text-darkBlue mt-4 mb:text-lg mb:w-4/5 mb:m-auto'>Here you'll find answers to the most common questions about our services
+      <p className='text-4xl text-center font-bold  text-darkBlue mt-4 mb:text-lg mb:w-4/5 mb:mx-auto'>Here you'll find answers to the most common questions about our services
       </p>
-      <div className='grid  grid-cols-4 row-gap-10 m-auto content-center justify-items-center  w-11/12 py-48 mb:grid-cols-2 mb:w-full mb:gap-5 mb:py-12' >
+      </div>
+      <div className='grid  grid-cols-4 gap-10 m-auto content-center justify-items-center  w-[90%] py-48 mb:grid-cols-2 mb:w-full mb:gap-5 mb:py-12 tb:grid-cols-3' >
       {content.map((item, index) => (
-        <div key={index} className='flex flex-col items-center  gap-2 justify-center h-56 w-56 bg-cardbg rounded-3xl p-4 mb:w-full mb:h-full'>
-          <Image className='w-20 h-20 mb:w-12 mb:h-12' src={item.img} alt={item.Text} />
-          <h2 className='text-center text-darkBlue font-extrabold text-2xl mt-2 mb:text-base'>{item.Text}</h2>
+        <div key={index} className='flex w-[80%] lg:w-full cursor-pointer py-4 flex-col items-center  gap-2 justify-center h-64 lg:h-52  bg-cardbg rounded-[3rem] p-6 mb:w-full mb:h-full tb:rounde-[2rem] mb:rounded-[2rem]'>
+          <Image className=' w-1/3' src={item.img} alt={item.Text} />
+          <h2 className='text-center text-darkBlue font-extrabold text-3xl mt-2 mb:text-base xl:text-2xl lg:text-xl'>{item.Text}</h2>
         </div>
       ))}
     </div>

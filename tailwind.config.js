@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -23,18 +24,23 @@ module.exports = {
         btnbg:'#9184F0',
         questionbg:'#EDE8FA',
         lightpurple:'#9B85C8',
-        formpurple:'#8458F8'
-
-      }
+        formpurple:'#8458F8',
+        lightgray:'#534988',
+        lightblue:'#635BFF'
+      },
+      fontFamily: {
+        roboto: ['Roboto-Condensed', 'sans-serif'],
+      },
     },
     screens: {
-      'mb': {'min': '300px', 'max': '600px'},
-      'lg':{'min':'900px','max':'1350px'},
+      'mb': {'min': '300px', 'max': '1000px'},
+      'tb': {'min': '600px', 'max': '1000px'},
+      'lg':{'min':'950px','max':'1300px'},
+      'xl':{'min':'1300px','max':'1700px'},
+      '2xl':{'min':'1600px','max':'1750px'}
     },
   },
   plugins: [],
 
   
 }
-
-// 5E5490

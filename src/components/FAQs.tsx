@@ -19,14 +19,14 @@ const FAQ: React.FC<FAQItem> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='border-b border-darkBlue'>
-      <div className="py-8 mb:py-4">
-        <div className='flex gap-6 cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <Image className='mb:h-3 mb:w-3' src={uparrow} alt="Up Arrow" /> : <Image className='mb:h-3 mb:w-3'  src={downarrow} alt="Down Arrow" />}
-          <h2 className="text-lg mb:text-xs">{question}</h2>
+    <div className='border-b font-roboto border-[#776FAB]'>
+      <div className="py-8 font-roboto mb:py-4 ">
+        <div className='flex font-roboto items-center gap-6 cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <Image className='w-8 h-5 mb:h-3 mb:w-3' src={uparrow} alt="Up Arrow" /> : <Image className='w-8 h-5  mb:h-3 mb:w-3'  src={downarrow} alt="Down Arrow" />}
+          <h2 className="text-2xl text-[#251F3A] mb:text-xs lg:text-xl">{question}</h2>
         </div>
       </div>
-      {isOpen && <p className="pl-6 text-base mb:text-xs">{answer}</p>}
+      {isOpen && <p className="text-2xl text-[#251F3A] pl-12  lg:text-xl mb:text-xs mb:pl-10">{answer}</p>}
     </div>
   );
 };
@@ -39,16 +39,16 @@ const FAQs: React.FC<{ faqData: any[],display:string }> = ({ faqData,display }) 
   }
 
   return (
-    <div className='px-10 pr-0 flex justify-between w-full m-auto gap-10 mb:flex-col-reverse mb:px-0'>
+    <div className='px-10 font-roboto pr-0 flex justify-between w-full m-auto gap-10 mb:flex-col-reverse mb:px-0'>
       <div className='w-1/2 mb:w-full'>
         {faqData.map((faq, index) => (
           <FAQ key={index} question={faq.question} answer={faq.answer} />
         ))}
       </div>
 
-      <div className={`bg-cardbg w-1/2 p-6 rounded-l-3xl flex flex-col items-end h-full mb:w-full ${display}`}>
-        <h2 className='text-5xl text-darkBlue font-extrabold mb:text-2xl'>Frequently Asked Questions</h2>
-        <Link href="" className='text-customBlue underline text-base font-bold mt-6'>More questions?</Link>
+      <div className={`bg-cardbg w-2/5 p-8 rounded-l-3xl flex flex-col items-end h-full mb:w-full lg:w-2/5 ${display}`}>
+        <h2 className='text-[73px] text-darkBlue font-extrabold mb:text-2xl lg:text-3xl xl:text-3xl'>Frequently Asked Questions</h2>
+        <Link href="" className='text-customBlue text-xl  underline  font-bold mt-6 lg:text-base'>More questions?</Link>
       </div>
     </div>
   );

@@ -19,28 +19,28 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex justify-between items-center p-8 mx-auto  mb:p-5 mb:flex-col '>
+    <div className='flex justify-between items-center p-8 px-16 mx-auto  mb:p-5 mb:flex-col xl:px-8 lg:px-6'>
       
       <div className="mb:hidden">
       <Link href='/' > <Image className='w-[160px] h-[30px]' src={logo} alt="" /></Link>
       </div>
       
-      <div className='mb:hidden flex items-center justify-between gap-8 '>
-      <ul className='flex  gap-10 font-bold text-darkBlue lg:gap-5 lg:text-sm'>
+      <div className='mb:hidden flex  items-center justify-between gap-10 xl:gap-8 lg:gap-6'>
+      <ul className='flex text-2xl font-Roboto-Condensed gap-10 font-bold text-darkBlue xl:gap-5 xl:text-xl  lg:gap-4 lg:text-sm'>
         <Link href="/" passHref><li>How it works</li></Link>
         <Link href="/ETutorSearch"> <li>eTutors</li> </Link>
         <Link href="/Packages"><li  >Packages</li></Link>
         <Link href="/Faqs" > <li >FAQs</li></Link>
         <li>|</li>
-        <li>  <Link href="/ETutorSearch"> For eTutors</Link></li>
+        <li>  <Link href="/Student"> For eTutors</Link></li>
       </ul>
-      {/* <div>
-        <Image src={icon} className='w-[125px] h-[25px]' />
-      </div> */}
+      <div>
+        <Image src={icon}  />
+      </div>
 
-    <Link href='/SignupAs' >  <button className='text-customBlue btn-primary focus:outline-none	'>SIGN IN</button></Link>
+    <Link href='/SignupAs' >  <button className= ' font-roboto  text-customBlue text-3xl btn-primary focus:outline-none	xl:text-xl lg:text-base'>SIGN IN</button></Link>
       {/* <button className='bg-customBlue '>SIGN UP</button> */}
-     <Link href='/SignupAs' ><Button className='font-bold' btnName='SIGN UP' /></Link> 
+     <Link href='/SignupAs' ><Button className=' font-bold text-3xl xl:text-lg xl:px-6 xl:py-3 lg:text-xs lg:px-6 lg:py-2' btnName='SIGN UP' /></Link> 
       </div>
 
 {/* //mobile navbar */}
@@ -68,7 +68,7 @@ const Navbar = () => {
           <Link href="/Packages"><li>Packages</li></Link>
           <Link href="/Faqs"><li>FAQs</li></Link>
           <li className='hidden'>|</li>
-          <Link href="/ETutorSearch" ><li>For eTutors</li></Link>
+          <Link href="/Student" ><li>For eTutors</li></Link>
         </ul>
         <div className='flex flex-col gap-4'>
          <Link href='/SignupAs' > <button className='text-customBlue focus:outline-none font-bold w-full '>SIGN IN</button></Link>
