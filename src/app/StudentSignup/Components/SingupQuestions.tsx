@@ -5,6 +5,7 @@ import QuestionBtn from './QuestionBtn';
 import ConfirmBtn from './ConfirmBtn';
 import Image from 'next/image';
 import dropdown from "../../../../public/assets/icons/downarrow.svg"
+import uparrow from "../../../../public/assets/icons/uparrow.svg"
 import google from "../../../../public/assets/icons/googleicon.svg"
 import line from "../../../../public/assets/icons/line.svg"
 import countryicon from "../../../../public/assets/icons/countryicon.svg"
@@ -12,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import Link from 'next/link';
 
 import Page from '../page';
+import InputHeading from '@/app/TutorSignup/components/InputHeading';
 const SingupQuestions = () => {
   const [selectedLevel, setSelectedLevel] = useState('');
   const [classLevel, setClassLevel] = useState('');
@@ -19,6 +21,7 @@ const SingupQuestions = () => {
   const [isGradeConfirmed, setIsGradeConfirmed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [nameDropdonw,setNameDropdonw] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState();
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [text, setText] = useState('');
@@ -79,7 +82,7 @@ const SingupQuestions = () => {
   const clearText = () => {
     setText('');
   };
-  const subjects = ['Algebra','Geometry','Calculas','Statistics','Trignometry','Biology','Chemistry', 'Physics', 'Environmental Science','Earth Sciences','English Literature','Grammar'];
+  const subjects = ['A','America','Argentina','Angola','Anghanista','B','Bangladesh','Bahrain'];
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -193,6 +196,7 @@ const SingupQuestions = () => {
     switch(QuestionNo){
       
       case 1:
+
         return (
           <div className='rounded-3xl bg-questionbg p-10 px-16 w-1/2 lg:p-8 mb:w-full mb:p-6'>
               <SingupHeading heading='What subjects do you need 
@@ -231,7 +235,131 @@ const SingupQuestions = () => {
         </div>
 
       );
+      // persoanl information
         case 2:
+          return (
+            <div className='  rounded-3xl bg-questionbg p-10 px-16 xl:px-6 w-full lg:p-8 mb:w-full mb:p-6'>
+              <div>
+  
+              <SingupHeading heading='Personal Information' />
+              </div>
+          <div>
+            <div className=' mb:gap-6'>
+            <div className='flex w-full justify-between mb:flex-col'>
+          
+          <div className='flex flex-col w-[30%] mb:w-full'>
+          <InputHeading text='Country' />
+  
+          <div className="relative  flex justify-center items-center">
+              <div className='flex justify-between items-center w-full cursor-pointer px-12 py-4 bg-purpleBtn rounded-full text-darkBlue xl:px-6  xl:text-lg text-2xl mb:text-sm lg:text-xs lg:px-4'  onClick={()=>setNameDropdonw(!nameDropdonw)}>
+              <button
+             
+              className="  bg-purpleBtn focus:outline-none text-darkpurple"
+            >
+              select a state / city
+            </button>
+          {nameDropdonw ?(<Image src={uparrow} alt='dropdown' />):(<Image src={dropdown} alt='uparrow' />)}  
+              </div>
+           
+            {nameDropdonw && (
+              <div className="absolute z-10 w-11/12 mt-20 m-auto top-0 rounded-3xl shadow-lg bg-purple ">
+                <div className="py-4 px-10 lg:p-4">
+                  {subjects.map((subject) => (
+                    <div key={subject} className="flex items-center p-2 text-darkBlue border-b     px-5 py-2 text-2xl border-darkBlue  cursor-pointer mb:text-sm placeholder-darkpurple lg:text-xs lg:px-4">
+                     
+                      <span>{subject}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          </div>
+          <div className='flex flex-col w-[30%] mb:w-full'>
+          <InputHeading text='State / City' />
+  
+          <div className="relative  flex justify-center items-center">
+              <div className='flex justify-between items-center w-full cursor-pointer px-12 py-4 bg-purpleBtn rounded-full text-darkBlue xl:px-6  xl:text-lg text-2xl lg:text-xs lg:px-4 mb:text-sm'  onClick={toggleDropdown}>
+              <button
+             
+              className="  bg-purpleBtn focus:outline-none text-darkpurple"
+            >
+              select a state / city
+            </button>
+          {isDropdownOpen ?(<Image src={uparrow} alt='dropdown' />):(<Image src={dropdown} alt='uparrow' />)}  
+              </div>
+           
+            {isDropdownOpen && (
+              <div className="absolute z-10 w-11/12 mt-20 m-auto top-0 rounded-3xl shadow-lg bg-purple ">
+                <div className="py-4 px-10 ">
+                  {subjects.map((subject) => (
+                    <div key={subject} className="flex items-center p-2 text-darkBlue border-b     px-5 py-2 text-2xl border-darkBlue  cursor-pointer mb:text-sm placeholder-darkpurple">
+                     
+                      <span>{subject}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          </div>
+            
+          <div className='w-[30%] mb:w-full'>
+  
+  <InputHeading text='Street Name ' className='text-[#685AAD]' />
+  <div className='rounded-full bg-purpleBtn px-10 xl:px-6 py-4 w-full lg:px-6 lg:py-4'>
+  <input type="text" 
+  className='placeholder-darkpurple text-2xl xl:text-xl text-darkBlue placeholder:text-2xl placeholder:xl:text-xl lg:text-xs placeholder:lg:text-xs placeholder:mb:text-sm w-full bg-transparent outline-none mb:text-xs ' 
+  placeholder='enter street name' />
+  </div>
+  
+    </div>
+            
+          </div>
+          <div className='flex justify-between w-full mt-10 lg:mt-4 mb:flex-col mb:mt-0'>
+          <div className='w-[30%] mb:w-full'>
+  
+  <InputHeading text='Zip Code ' className='text-[#685AAD]' />
+  <div className='rounded-full bg-purpleBtn px-10 py-4 w-full'>
+  <input type="text" 
+  className='placeholder-darkpurple text-2xl text-darkBlue placeholder:text-2xl xl:placeholder:text-xl lg:placeholder:text-sm placeholder:mb:text-sm lg:text-sm xl:text-xl w-full bg-transparent outline-none mb:text-xs' 
+  placeholder='Zip Code' />
+  </div>
+  
+    </div>
+    <div className='w-[30%] mb:w-full'>
+  
+  <InputHeading text='Institution ' className='text-[#685AAD]' />
+  <div className='rounded-full bg-purpleBtn px-10 py-4 w-full'>
+  <input type="text" 
+  className='placeholder-darkpurple text-2xl text-darkBlue placeholder:text-2xl w-full bg-transparent xl:placeholder:text-xl xl:text-xl placeholder:mb:text-sm  outline-none mb:text-xs lg:placeholder:text-sm lg:text-sm' 
+  placeholder='enter institution name ' />
+  </div>
+  
+    </div>
+    <div className='w-[30%] mb:w-full'>
+  
+  <InputHeading text='Age' className='text-[#685AAD]' />
+  <div className='rounded-full bg-purpleBtn px-10 py-4 w-full'>
+  <input type="text" 
+  className='placeholder-darkpurple text-2xl text-darkBlue placeholder:text-2xl w-full bg-transparent outline-none xl:placeholder:text-xl xl:text-xl  placeholder:mb:text-sm mb:text-xs lg:placeholder:text-sm lg:text-sm' 
+  placeholder='enter age' />
+  </div>
+  
+    </div>
+          </div>
+            </div>
+            
+          </div>
+             <div className='w-[30%] ml-auto pt-12'>
+
+              <ConfirmBtn  onClick={()=>setQuestionNo(QuestionNo+1)}  btnName='Confirm' />
+             </div>
+             
+           
+            </div>
+          );
+          case 3:
           return (
             <div className='  rounded-3xl bg-questionbg p-10 px-16 w-full lg:p-8 mb:w-full mb:p-6'>
               <div>
@@ -266,7 +394,7 @@ const SingupQuestions = () => {
             </div>
           );
           // when you are available
-      case 3:
+      case 4:
         return(
           <div className=' rounded-3xl mr-auto bg-questionbg px-8 py-10 w-2/6 lg:w-1/2  lg:p-8 mb:w-full mb:p-6'>
 
@@ -298,7 +426,7 @@ const SingupQuestions = () => {
           </div>
         );
         // signup form
-       case 4:
+       case 5:
         return(
           <div className='rounded-3xl bg-questionbg p-5  w-1/3 lg:p-8 lg:w-5/12 mb:w-full mb:p-5 '>
               <SingupHeading className='text-5xl py-0' heading='Sign Up' />

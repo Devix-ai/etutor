@@ -37,7 +37,7 @@ module.exports = {
       'tb': {'min': '600px', 'max': '1000px'},
       'lg':{'min':'950px','max':'1300px'},
       'xl':{'min':'1300px','max':'1700px'},
-      '2xl':{'min':'1600px','max':'1750px'}
+      '2xl':{'min':'1600px'}
     },
   },
   plugins: [],

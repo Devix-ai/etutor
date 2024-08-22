@@ -7,9 +7,9 @@ const page = () => {
     <div className='flex h-screen flex-col w-full bg-cover bg-center px-16 mb:px-4  "
       '  style={{ backgroundImage: `url(${back.src})` }}>
      <SignUpNavbar/>
-     <div className='h-full m-auto' >
+     <div className='h-screen m-auto flex flex-col justify-center' >
       <div className=" m-auto pt-20 mb:w-full mb:m-auto mb:pt-10"> {/* Optional dark overlay */}
-        <h1 className="text-darkBlue max-w-6xl font-bold text-5xl md:text-2xl text-center p-4 mb:text-xl ">
+        <h1 className="text-darkBlue max-w-6xl font-bold text-[50px] md:text-2xl text-center p-4 mb:text-xl ">
           A confirmation email with a link has been sent to your inbox. 
           <span className='font-light'>Please check your <span className='underline font-light'>email</span> to complete the process.</span>
         </h1>

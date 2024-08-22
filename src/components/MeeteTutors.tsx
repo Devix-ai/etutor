@@ -43,27 +43,27 @@ const MeeteTutors = () => {
   ];
 
   return (
-    <div className='font-roboto pt-64  mt-16 px-10 lg:px-0 mb:p-0 lg:pt-40'>
+    <div className=' pt-64  mt-16 px-10 lg:px-0 mb:p-0 lg:pt-40'>
       <div className=' flex justify-between items-end mb:block'>
         <Headings className=''  heading='Meet Our eTutors' />
-        <Link href="" className='text-customBlue underline text-3xl font-extrabold lg:text-xl'>More eTutors</Link>
+        <Link href="" className='text-customBlue underline text-4xl font-extrabold lg:text-xl'>More eTutors</Link>
       </div>
       <div className='mt-8 mb:flex-wrap  justify-between  grid grid-cols-4 mb:grid-cols-1 tb:grid-cols-2 lg:grid-cols-3 mb:justify-center lg:flex-wrap  items-center gap-6 py-5 '>
         {
           tutorsData.map((tutor) => (
-            <div className='mb:w-full flex flex-col w-100 font-roboto bg-cardbg px-8 py-6 rounded-3xl gap-2 lg:w-72' key={tutor.id}>
+            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-8 py-6 rounded-3xl gap-3 lg:w-72' key={tutor.id}>
               <div className='relative'>
                 <Image className='mb:w-full w-full' alt='' src={tutor.image} />
                 <Image alt='' src={award} style={{ right: '-10%', bottom: '-12%' }} className='w-24 h-24 absolute' />
               </div>
-              <h3 className='text-darkBlue text-5xl font-extrabold lg:text-3xl xl:text-4xl mb:text-3xl'>{tutor.name}</h3>
-              <p className='text-customBlue text-3xl font-thin lg:text-xl xl:text-2xl mb:text-2xl'>{tutor.bookings}</p>
-              <p className='text-darkBlue text-2xl font-extrabold lg:text-lg xl:text-xl mb:text-xl'>{tutor.sessionPrice}<span className='text-gray-600 font-light'>/session</span></p>
+              <h3 className='text-darkBlue pt-4 text-5xl font-extrabold lg:text-3xl xl:text-4xl mb:text-3xl'>{tutor.name}</h3>
+              <p className='text-customBlue text-[36px]  lg:text-xl xl:text-2xl mb:text-2xl'>{tutor.bookings}</p>
+              <p className='text-darkBlue text-[36px] font-extrabold lg:text-lg xl:text-xl mb:text-xl'>{tutor.sessionPrice}<span className='text-[#887CC4] font-light'>/session</span></p>
             </div>
           ))
         }
       </div>
-      <div className='text-darkBlue text-2xl leading-8 font-bold font-roboto mb:py-5 mb:text-xs py-16 mb:leading-normal  lg:text-xl'>
+      <div className='text-darkBlue text-[28px] leading-8   mb:py-5 mb:text-xs py-16 mb:leading-normal  lg:text-xl'>
         <p  >Our eTutors are top students selected for their exceptional knowledge and ability to connect with peers. They understand your challenges and
           provide practical, effective solutions. Always striving to level up, their progress is based on experience, student improvements, and reviews. This
           gamer-like drive ensures you get the best support possible.
