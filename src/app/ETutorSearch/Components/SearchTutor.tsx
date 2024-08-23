@@ -14,7 +14,7 @@ const SearchTutor = () => {
 
 
   return (
-    <div className='text-[#685AAD]  w-[70%] pr-10 xl:w-[70%] lg:w-[75%] lg:text-2xl text-3xl ml-auto flex mt-64 mb-20 items-end justify-end gap-8  mb:gap-4 mb:text-xs mb:flex-col mb:justify-center mb:items-start mb:my-12 mb:w-full mb:pr-0'>
+    <div className='text-[#685AAD]  w-[70%] pr-10 xl:w-[70%] lg:w-[75%] lg:text-2xl text-3xl ml-auto flex mt-32 mb-20 items-end justify-end gap-8  mb:gap-4 mb:text-xs mb:flex-col mb:justify-center mb:items-start mb:my-12 mb:w-full mb:pr-0'>
       <div onClick={toggleDropdown} className='bg-[#DBCAFF] text-[#A192D5] w-1/2 relative rounded-full items-center  cursor-pointer px-20 py-6 flex  justify-between gap-16 mb:gap-4 mb:rounded-3xl mb:px-4 mb:py-3 mb:text-sm mb:w-full xl:px-12 xl:py-4 lg:px-10 lg:py-3 '>
         <p className='text-[#A192D5] text-[32px] lg:text-[22px] mb:text-[14px] '>Sort By</p>
       {isDropdownOpen ? (<Image alt='sort' className='w-6 text-[#A192D5] h-10 mb:w-3 mb:h-auto'  src={uparrow}/>):(<Image alt='sort' className='w-6 h-10 mb:w-3 mb:h-auto'  src={sortIcon}/>)}  

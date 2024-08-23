@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 const Package = () => {
   return (
-    <div className='w-[85%] lg:w-[90%]  font-roboto m-auto mb:w-full mb:py-5 py-24 lg:py-12'>
+    <div className='w-[85%] lg:w-[90%]   m-auto mb:w-full mb:py-5 py-24 lg:py-12'>
       <h2 className='text-blue 2xl:text-5xl max-w-[500px]  mx-auto text-3xl text-center font-extrabold mb:text-2xl'>
         Our most popular Package
       </h2>

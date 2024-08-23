@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className='w-full px-4 flex items-center mb:flex-col mb:gap-6 mb:py-4 mb:justify-center' >
       <div className='mb:w-full mb:text-center  w-1/2 '>
-        <h2 className=' text-[64px] leading-none mb:text-2xl font-extrabold lg:text-3xl xl:text-4xl '>
+        <h2 className=' text-[64px] leading-tight mb:text-2xl font-extrabold lg:text-3xl xl:text-4xl '>
           <span className='text-darkBlue'>Unlock Better Grades with </span>
           <span className='text-customBlue'>Engaging, </span>
           <span className='text-customPink'>Efficient </span>

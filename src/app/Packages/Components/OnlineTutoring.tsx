@@ -7,7 +7,7 @@ import img3 from "../../../../public/assets/homepage/nohidden.png"
 import img4 from "../../../../public/assets/homepage/robust.png"
 const OnlineTutoring = () => {
   return (
-    <div className='w-full font-roboto py-40 mb:py-12 mb:w-11/12 mb:m-auto'>
+    <div className='w-full  py-40 mb:py-12 mb:w-11/12 mb:m-auto'>
         <div className='text-center'>
         <Headings className='text-center' heading='Secure Online Tutoring'/>
         <p className='text-2xl 2xl:text-4xl mt-5 text-[#534988] mb:text-base'>We provide a protected learning environment to foster student success.</p>

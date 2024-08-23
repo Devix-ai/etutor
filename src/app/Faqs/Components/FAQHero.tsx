@@ -25,24 +25,24 @@ const FAQHero = () => {
   ];
   
   return (
-    <div className='w-100 font-roboto'>
-      <div className='h-[80vh] flex justify-center items-center flex-col'>
+    <div className='w-100 '>
+      <div className='h-[80vh] flex justify-center items-center flex-col mb:h-[60vh]'>
 
      
      <div className='w-3/4 m-auto flex items-center justify-center text-center my-10 '>
-     <Headings className='text-6xl max-w-3xl leading-normal xl:leading-normal' heading='Frequently Asked Questions'/>
+     <Headings className='text-[90px] font-extrabold max-w-3xl leading-normal xl:leading-normal mb:text-[35px] mb:leading-none' heading='Frequently Asked Questions'/>
         </div>
       
-      <p className='text-4xl text-center font-bold  text-darkBlue mt-4 mb:text-lg mb:w-4/5 mb:mx-auto'>Here you'll find answers to the most common questions about our services
+      <p className='text-[42px] text-center font-medium  text-darkBlue mt-4 mb:text-lg mb:w-4/5 mb:mx-auto lg:text-[30px] xl:text-[35px]'>Here you'll find answers to the most common questions about our services
       </p>
       </div>
-      <div className='grid  grid-cols-4 gap-10 m-auto content-center justify-items-center  w-[90%] py-48 mb:grid-cols-2 mb:w-full mb:gap-5 mb:py-12 tb:grid-cols-3' >
+      <div className='grid  grid-cols-4 gap-y-20 gap-10 m-auto content-center justify-items-center  w-[90%] py-60 mb:grid-cols-2 mb:w-full mb:gap-5 mb:py-12 tb:grid-cols-3' >
       {content.map((item, index) => (
   <div key={index} className='w-full'>
     <Link href={item.link || '#'}>
-      <div className='flex w-[80%] lg:w-full cursor-pointer py-4 flex-col items-center gap-2 justify-center h-[300px] xl:h-64 lg:h-52 bg-cardbg rounded-[3rem] p-6 mb:w-full mb:h-full tb:rounde-[2rem] mb:rounded-[2rem]'>
-        <Image className='w-1/3' src={item.img} alt={item.Text} />
-        <h2 className='text-center text-darkBlue font-extrabold text-3xl mt-4 mb:text-base xl:text-2xl lg:text-xl'>{item.Text}</h2>
+      <div className='flex w-[80%] xl:w-[85%] mx-auto lg:w-full cursor-pointer py-8 flex-col items-center gap-2 justify-center h-[310px] xl:h-64 lg:h-52 bg-cardbg rounded-[2.5rem] p-6 mb:w-full mb:h-full tb:rounde-[2rem] mb:rounded-[2rem]  mb:p-5'>
+        <Image className='lg:w-[40%] mb:w-auto' src={item.img} alt={item.Text} />
+        <h2 className='text-center px-5 text-darkBlue font-bold text-[36px] mt-8 mb:text-base xl:text-2xl lg:text-xl lg:mt-4 mb:mt-2 mb:px-0'>{item.Text}</h2>
       </div>
     </Link>
   </div>

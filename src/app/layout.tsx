@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html className="" lang="en">
+      <body className={`${roboto.className} overflow-x-hidden`}>
         {/* <Navbar /> */}
         {children} 
         {/* <Footer /> */}

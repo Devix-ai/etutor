@@ -12,7 +12,7 @@ const page = () => {
   return (
     <>
     <Navbar/>
-    <div className='mb:px-5 font-roboto'>
+    <div className='mb:px-5 '>
         <PackageHero/>
         <Membership/>
        <Package/>

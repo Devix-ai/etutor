@@ -7,9 +7,9 @@ import Image from 'next/image'
 const Membership = () => {
   return (
     <>
-    <div className='bg-cardbg font-roboto flex flex-col justify-center items-center py-16 mb-3 mb:text-center mb:p-6'>
-      <h2 className='text-5xl 2xl:text-[80px] font-extrabold text-[#685AAD] mb:text-2xl'>Customise your membership</h2>
-      <p className='text-xl 2xl:text-3xl max-w-screen-lg w-[80%] mt-8 text-[#534988] text-center mb:text-sm'>
+    <div className='bg-cardbg  flex flex-col justify-center items-center py-16 mb-3 mb:text-center mb:p-6'>
+      <h2 className='text-[65px] 2xl:text-[80px] font-extrabold text-[#685AAD] mb:text-2xl'>Customise your membership</h2>
+      <p className='text-xl 2xl:text-[35px] leading-none max-w-screen-lg w-[80%] mt-8 text-[#534988] text-center mb:text-sm'>
         Experience customized tutoring with eTutors: affordable rates, 1:1 sessions from 
         expert-matched tutors, flexible lesson packages, and convenient scheduling options.
       </p>

@@ -43,15 +43,15 @@ const MeeteTutors = () => {
   ];
 
   return (
-    <div className=' pt-64  mt-16 px-10 lg:px-0 mb:p-0 lg:pt-40'>
-      <div className=' flex justify-between items-end mb:block'>
+    <div className=' pt-44  mt-16 px-10 lg:px-0 mb:p-0 lg:pt-40'>
+      <div className=' flex justify-between items-end  tb:flex-row'>
         <Headings className=''  heading='Meet Our eTutors' />
-        <Link href="" className='text-customBlue underline text-4xl font-extrabold lg:text-xl'>More eTutors</Link>
+        <Link href="/ETutorSearch" className='text-customBlue underline mb:text-sm text-4xl font-extrabold lg:text-lg xl:text-lg tb:text-sm '>More eTutors</Link>
       </div>
       <div className='mt-8 mb:flex-wrap  justify-between  grid grid-cols-4 mb:grid-cols-1 tb:grid-cols-2 lg:grid-cols-3 mb:justify-center lg:flex-wrap  items-center gap-6 py-5 '>
         {
           tutorsData.map((tutor) => (
-            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-10 py-8 rounded-3xl gap-3 lg:w-72' key={tutor.id}>
+            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-10 py-8 rounded-3xl gap-3 lg:w-72 mb:rounded-2xl mb:px-5 mb:py-6' key={tutor.id}>
               <div className='relative'>
                 <Image className='mb:w-full w-full' alt='' src={tutor.image} />
                 <Image alt='' src={award} style={{ right: '-10%', bottom: '-12%' }} className='w-24 h-24 absolute' />
