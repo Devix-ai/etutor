@@ -3,20 +3,14 @@ import React from 'react'
 import blackbg from "../../../../public/assets/homepage/listbackpic.png"
 import Button from '@/components/Button'
 import Link from 'next/link'
+import  './TutorsList.css'
 const SeeTutorsList = () => {
   return (
-    <div   className=' flex font-roboto items-center gap-10 justify-center  flex-col bg-cover py-12 my-64  bg-center  w-full rounded-3xl   mb:py-0 mb:gap-3 text-center mb:px-0 mb:my-8'
-    style={{ 
-        height: '30rem', 
-        width: '100%', 
-        backgroundImage: `url(${blackbg})`, 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center' 
-      }}
+    <div   className='tutor_list flex  items-center gap-10 justify-center  flex-col bg-cover py-32 my-64  bg-center  w-full rounded-[30px]    mb:gap-3 text-center mb:px-0 mb:py-16 mb:my-8 xl:py-50'
     >
-        <h2 className='text-6xl text-[#5349] mb:text-xl'>600+ More eTutors found</h2>
+        <h2 className='text-[72px] text-[#8179A7] mb:text-xl lg:text-[40px] xl:text-[50px]'>600+ More eTutors found</h2>
       <Headings className='mb:mt-2 ' heading='Sign up to see the full list'/>
-     <Link href='/SignupAs'><Button className='py-5 mt-10' btnName='SEE THE FULL LIST'/></Link> 
+     <Link href='/SignupAs'><Button className='py-7 px-24 mt-12 lg:text-[25px]' btnName='SEE THE FULL LIST'/></Link> 
     </div>
   )
 }
