@@ -46,7 +46,7 @@ const FAQs: React.FC<{ faqData: any[],display:string }> = ({ faqData,display }) 
         ))}
       </div>
 
-      <div className={`bg-cardbg w-[38%] px-16 py-8 rounded-l-3xl flex flex-col items-end h-full mb:w-full lg:w-2/5 ${display}`}>
+      <div className={`bg-cardbg w-[40%] px-16 py-8 rounded-l-3xl flex flex-col items-end h-full mb:w-full lg:w-2/5  mb:p-5 ${display}`}>
         <h2 className='text-[73px] text-darkBlue font-extrabold mb:text-2xl lg:text-3xl xl:text-3xl'>Frequently Asked Questions</h2>
         <Link href="" className='text-customBlue text-xl  underline  font-bold mt-6 lg:text-base'>More questions?</Link>
       </div>

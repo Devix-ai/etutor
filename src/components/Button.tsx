@@ -6,7 +6,7 @@ type propsType = {
 const Button = ({ btnName,className }: propsType) => {
   return (
     
-    <button className={`${className} text-3xl  font-extrabold bg-customBlue  px-10 py-4 border-none focus:outline-none text-white rounded-full xl:text-2xl  mb:px-8 mb:py-4 mb:text-base`} >      {btnName}
+    <button className={`${className} text-[34px]  font-extrabold bg-customBlue  px-10 py-4 border-none focus:outline-none text-white rounded-full xl:text-2xl  mb:px-8 mb:py-4 mb:text-base`} >      {btnName}
     </button>
 
   )

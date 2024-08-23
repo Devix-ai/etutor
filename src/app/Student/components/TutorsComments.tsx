@@ -86,25 +86,25 @@ award:award4,
   return (
     <div className='px-10 py-16 pt-64 mb:px-0 mb:py-4 lg:pt-32'>
       <Headings heading='``What our eTutors say' />
-      <p className='text-darkBlue text-3xl mb:text-xs lg:text-2xl mt-3' >98% of our eTutors say they are happy to work with us</p>
-      <div className='w-full grid grid-cols-4	 gap-4 py-8 mb:flex-col xl:grid-cols-3 lg:grid-cols-2 mb:grid-cols-1 tb:grid-cols-2'>
+      <p className='text-darkBlue text-[30px] mb:text-xs lg:text-2xl mt-3' >98% of our eTutors say they are happy to work with us</p>
+      <div className='w-full grid grid-cols-4	 gap-4 py-20 mb:flex-col xl:grid-cols-3 lg:grid-cols-2 mb:grid-cols-1 tb:grid-cols-2'>
         {
           content.map((content) => (
             <div className='bg-cardbg p-8 w-full rounded-3xl mb:w-full mb:p-4' key={content.id}>
               <div className='flex flex-col row-gap-2' >
-                <div className='flex items-center justify-between gap-5'>
+                <div className='flex items-center justify-between gap-5 mb:gap-2'>
                   <div className='rounded-full w-24 h-24'>
                     <Image src={content.img} />
                   </div>
                   <div>
-                    <h2 className=' font-bold text-3xl mb:text-xl'>{content.title}</h2>
-                    <p  className='text-lg mb:text-xs'>Published:{content.date}</p>
+                    <h2 className=' font-semibold text-[#534988] text-[31px] mb:text-xl'>{content.title}</h2>
+                    <p  className='text-[17px] text-[#786898]  mb:text-xs'>{content.date}</p>
                   </div>
-                  <div className='rounded-full w-20 h-20'>
-                    <Image className='w-20 h-20' src={content.award} />
+                  <div className='rounded-full w-20 '>
+                    <Image className='' src={content.award} />
                   </div>
                 </div>
-                <p className='text-darkBlue text-xl mb:text-xs xl:text-base pt-6 '>
+                <p className='text-[#473171] text-xl leading-6   mb:text-xs xl:text-base pt-6 '>
                   {content.paragraph}
                 </p>
               </div>
