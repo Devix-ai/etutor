@@ -51,7 +51,7 @@ const MeeteTutors = () => {
       <div className='mt-8 mb:flex-wrap  justify-between  grid grid-cols-4 mb:grid-cols-1 tb:grid-cols-2 lg:grid-cols-3 mb:justify-center lg:flex-wrap  items-center gap-6 py-5 '>
         {
           tutorsData.map((tutor) => (
-            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-8 py-6 rounded-3xl gap-3 lg:w-72' key={tutor.id}>
+            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-10 py-8 rounded-3xl gap-3 lg:w-72' key={tutor.id}>
               <div className='relative'>
                 <Image className='mb:w-full w-full' alt='' src={tutor.image} />
                 <Image alt='' src={award} style={{ right: '-10%', bottom: '-12%' }} className='w-24 h-24 absolute' />
@@ -63,7 +63,7 @@ const MeeteTutors = () => {
           ))
         }
       </div>
-      <div className='text-darkBlue text-[28px] leading-8   mb:py-5 mb:text-xs py-16 mb:leading-normal  lg:text-xl'>
+      <div className='text-[#473171] text-[28px] leading-8   mb:py-5 mb:text-xs py-16 mb:leading-normal  lg:text-xl'>
         <p  >Our eTutors are top students selected for their exceptional knowledge and ability to connect with peers. They understand your challenges and
           provide practical, effective solutions. Always striving to level up, their progress is based on experience, student improvements, and reviews. This
           gamer-like drive ensures you get the best support possible.

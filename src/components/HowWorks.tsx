@@ -3,9 +3,9 @@ import Headings from './Headings'
 import WorkSteps from './WorkSteps'
 const HowWorks = () => {
   return (
-    <div className='px-10 lg:px-0 mb:px-0 pt-32 mb:pt-10'>
+    <div className='px-10 lg:px-0 mb:px-0 pt-52 mb:pt-10'>
       <Headings heading='How it works' />
-      <div className='flex w-full justify-between col-gap-20 mb:flex-col lg:col-gap-6'>
+      <div className='flex w-full justify-between pt-12 col-gap-20 mb:flex-col lg:col-gap-6'>
         <div className=' flex flex-col justify-start items-start'>
           <WorkSteps number='1' head='Sign Up' text='Create your account and tell us about your learning needs' />
           <WorkSteps number='2' head='Choose' text='Browse and select a eTutor who specializes in your area of study' />

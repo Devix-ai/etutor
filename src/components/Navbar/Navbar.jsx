@@ -40,7 +40,7 @@ const Navbar = () => {
 
     <Link href='/SignupAs' >  <button className= '  font-medium text-customBlue text-[27px] focus:outline-none	xl:text-xl lg:text-base'>SIGN IN</button></Link>
       {/* <button className='bg-customBlue '>SIGN UP</button> */}
-     <Link href='/SignupAs' ><Button className=' font-extrabold text-[27px] xl:text-lg xl:px-6 xl:py-3 lg:text-xs lg:px-6 lg:py-2' btnName='SIGN UP' /></Link> 
+     <Link href='/SignupAs' ><Button className='py-5 px-12 font-extrabold text-[27px] xl:text-lg xl:px-6 xl:py-3 lg:text-xs lg:px-6 lg:py-2' btnName='SIGN UP' /></Link> 
       </div>
 
 {/* //mobile navbar */}

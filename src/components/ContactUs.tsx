@@ -3,9 +3,9 @@ import Headings from './Headings'
 import Link from 'next/link'
 const ContactUs = () => {
   return (
-    <div className='px-10 pt-56 pb-20 lg:py-32 mb:px-0 mb:py-20 font-roboto'>
+    <div className='px-10 pt-64 pb-20 lg:pt-32 mb:px-0 mb:py-20 '>
       <Headings className='' heading='Contact Us' />
-      <p className='text-darkBlue text-2xl mb:text-sm'>Have questions or need more information? Reach out to us at<Link href='' className='text-customBlue'> contact@etutor4me.com</Link></p>
+      <p className='text-[#473171] text-[27px] mt-5 mb:text-sm'>Have questions or need more information? Reach out to us at<Link href='' className='text-customBlue underline'> contact@etutor4me.com</Link></p>
     </div>
   )
 }

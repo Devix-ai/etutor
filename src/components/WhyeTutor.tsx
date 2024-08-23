@@ -27,19 +27,19 @@ const WhyeTutor = () => {
 
   ]
   return (
-    <div className='font-roboto px-10 pt-24 lg:px-0 mb:px-0'>
+    <div className=' px-10 pt-24 lg:px-0 mb:px-0'>
       <Headings className='' heading='Why Choose eTutor4Me?' />
 
       <div className='w-full grid grid-cols-3 gap-4 py-8 pt-12 mb:flex-col mb:grid-cols-1 tb:grid-cols-2'>
         {
           content.map((content) => (
-            <div className='bg-cardbg font-roboto p-8 w-full rounded-3xl mb:w-full mb:p-4 lg:p-5' key={content.id}>
+            <div className='bg-cardbg  p-10 w-full rounded-[40px] mb:w-full mb:p-4 lg:p-5' key={content.id}>
               <div className='flex flex-col row-gap-2 mb:text-xs ' >
                 <div className=' w-full  rounded-3xl mb:h-full'>
                   <Image className='w-full h-full ' alt='img' src={content.img} />
                 </div>
-                <h2 className='text-darkBlue text-3xl font-bold mt-2  xl:text-2xl lg:text-2xl mb:text-xl'>{content.heading}</h2>
-                <p className='text-darkBlue text-2xl font-bold leading-8 xl:text-xl lg:text-base lg:leading-normal mb:text-sm mb:leading-normal'>
+                <h2 className='text-darkBlue text-3xl font-semibold mt-7  xl:text-2xl lg:text-2xl mb:text-xl'>{content.heading}</h2>
+                <p className='text-darkBlue text-[27px] mt-3   xl:text-xl lg:text-base lg:leading-normal mb:text-sm mb:leading-normal'>
                   {content.paragraph}
                 </p>
               </div>
