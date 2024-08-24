@@ -18,7 +18,7 @@ export default function Home() {
 
     <>
 <Navbar/>
-      <div className="px-12 mb:px-5 ">
+      <div className="px-14 mb:px-5 lg:px-5">
         <Hero />
      <MeeteTutors />
         <WhyeTutor />

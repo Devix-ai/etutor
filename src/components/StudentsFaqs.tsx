@@ -15,7 +15,7 @@ const StudentsFaqs:React.FC = () => {
       ];
 
   return (
-    <div className='lg:px-0'>
+    <div className='pl-40 lg:pl-24 xl:pl-32'>
                 <FAQs display='' faqData={studentsFaqs}/>
     </div>
   )

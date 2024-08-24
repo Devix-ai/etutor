@@ -35,7 +35,7 @@ module.exports = {
     screens: {
       'mb': {'min': '300px', 'max': '1000px'},
       'tb': {'min': '600px', 'max': '1000px'},
-      'lg':{'min':'950px','max':'1300px'},
+      'lg':{'min':'1000px','max':'1300px'},
       'xl':{'min':'1300px','max':'1700px'},
       '2xl':{'min':'1600px'}
     },

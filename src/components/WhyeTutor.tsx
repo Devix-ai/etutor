@@ -27,13 +27,13 @@ const WhyeTutor = () => {
 
   ]
   return (
-    <div className=' px-10 pt-24 lg:px-0 mb:px-0'>
+    <div className=' px-10 pt-24  mb:px-0 lg:px-5 lg:pt-16'>
       <Headings className='' heading='Why Choose eTutor4Me?' />
 
-      <div className='w-full grid grid-cols-3 gap-4 py-8 pt-12 mb:flex-col mb:grid-cols-1 tb:grid-cols-2'>
+      <div className='w-full grid grid-cols-3 gap-4 py-8 pt-16 mb:flex-col mb:grid-cols-1 tb:grid-cols-2'>
         {
           content.map((content) => (
-            <div className='bg-cardbg  p-10 w-full rounded-[40px] mb:rounded-2xl mb:w-full mb:p-6 lg:p-5' key={content.id}>
+            <div className='bg-cardbg  p-10 w-full rounded-[30px] mb:rounded-2xl mb:w-full mb:p-6 lg:p-5 lg:rounded-2xl xl:p-6' key={content.id}>
               <div className='flex flex-col row-gap-2 mb:text-xs ' >
                 <div className=' w-full  rounded-3xl mb:h-full'>
                   <Image className='w-full h-full ' alt='img' src={content.img} />

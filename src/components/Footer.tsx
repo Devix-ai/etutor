@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 const Footer = () => {
   return (
-    <div className='px-20 bg-cardbg py-12 mb:p-5 lg:px-'>
+    <div className='px-20 bg-cardbg py-12 mb:p-5 lg:px-10'>
       <div className='flex justify-between items-start mb:flex-col mb:gap-5'>
         <div className='flex flex-col justify-between gap-12 mb:py-4 xl:gap-5 mb:gap-4'>
           <div className='flex flex-col gap-9 text-xl text-[#473171] lg:gap-5 xl:text-lg xl:gap-7 lg:text-base mb:text-sm mb:gap-4'>

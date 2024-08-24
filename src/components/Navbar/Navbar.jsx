@@ -19,14 +19,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex justify-between items-center py-12  px-20 mx-auto  mb:p-5 mb:flex-col xl:px-16 lg:px-16'>
+    <div className='flex justify-between items-center py-12  px-20 mx-auto  mb:p-5 mb:flex-col xl:px-16 lg:px-10 lg:py-8'>
       
       <div className="mb:hidden">
-      <Link href='/' > <Image className='w-[160px] h-[30px]' src={logo} alt="" /></Link>
+      <Link href='/' > <Image className='w-[10rem]' src={logo} alt="" /></Link>
       </div>
       
-      <div className='mb:hidden flex  items-center justify-between gap-8 xl:gap-8 lg:gap-6 w-[80%]'>
-      <ul className='flex text-2xl w-[55%] justify-between font-medium text-[#473171]  xl:text-xl  lg:gap-4 lg:text-sm'>
+      <div className='mb:hidden flex  items-center justify-between gap-8 xl:gap-6 lg:gap-6 w-[80%]'>
+      <ul className='flex text-2xl w-[55%]  justify-between font-medium text-[#473171]  xl:text-xl lg:w-[50%] lg:gap-1 lg:text-[15px]'>
         <Link href="/" passHref><li>How it works</li></Link>
         <Link href="/ETutorSearch"> <li>eTutors</li> </Link>
         <Link href="/Packages"><li  >Packages</li></Link>
@@ -35,12 +35,12 @@ const Navbar = () => {
         <li>  <Link href="/Student"> For eTutors</Link></li>
       </ul>
       <div className='cursor-pointer'>
-        <Image src={icon}  />
+        <Image className='w-[7rem] lg:w-[5rem]' src={icon}  />
       </div>
 
-    <Link href='/SignupAs' >  <button className= '  font-medium text-customBlue text-[27px] focus:outline-none	xl:text-xl lg:text-base'>SIGN IN</button></Link>
+    <Link href='/SignupAs' >  <button className= '  font-medium text-customBlue !text-[27px] focus:outline-none	xl:!text-2xl lg:!text-lg'>SIGN IN</button></Link>
       {/* <button className='bg-customBlue '>SIGN UP</button> */}
-     <Link href='/SignupAs' ><Button className='text-xl px-8 py-3 font-extrabold  xl:text-xl xl:px-6 xl:py-3 lg:text-xs lg:px-6 lg:py-2' btnName='SIGN UP' /></Link> 
+     <Link href='/SignupAs' ><Button className='!text-[27px]  px-8 py-3 font-extrabold  xl:!text-2xl xl:px-6 xl:py-3 lg:!text-lg lg:px-6 lg:py-2' btnName='SIGN UP' /></Link> 
       </div>
 
 {/* //mobile navbar */}

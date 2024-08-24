@@ -43,18 +43,18 @@ const MeeteTutors = () => {
   ];
 
   return (
-    <div className=' pt-44  mt-16 px-10 lg:px-0 mb:p-0 lg:pt-40'>
+    <div className=' pt-44  mt-16 px-10  mb:p-0 lg:pt-16 lg:px-5 xl:pt-28'>
       <div className=' flex justify-between items-end  tb:flex-row'>
         <Headings className=''  heading='Meet Our eTutors' />
         <Link href="/ETutorSearch" className='text-customBlue underline mb:text-sm text-4xl font-extrabold lg:text-lg xl:text-lg tb:text-sm '>More eTutors</Link>
       </div>
-      <div className='mt-8 mb:flex-wrap  justify-between  grid grid-cols-4 mb:grid-cols-1 tb:grid-cols-2 lg:grid-cols-3 mb:justify-center lg:flex-wrap  items-center gap-6 py-5 '>
+      <div className='mt-8 mb:flex-wrap  justify-between  grid grid-cols-4 mb:grid-cols-1 tb:grid-cols-2 lg:grid-cols-4 mb:justify-center lg:flex-wrap lg:gap-5  items-center gap-10 py-5 '>
         {
           tutorsData.map((tutor) => (
-            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-10 py-8 rounded-3xl gap-3 lg:w-72 mb:rounded-2xl mb:px-5 mb:py-6' key={tutor.id}>
+            <div className='mb:w-full flex flex-col w-100  bg-cardbg px-10 py-8 rounded-3xl gap-3 lg:w-fu lg:rounded-2xl lg:p-4 lg:gap-2 xl:p-7 mb:rounded-2xl mb:px-5 mb:py-6' key={tutor.id}>
               <div className='relative'>
                 <Image className='mb:w-full w-full' alt='' src={tutor.image} />
-                <Image alt='' src={award} style={{ right: '-10%', bottom: '-12%' }} className='w-24 h-24 absolute' />
+                <Image alt='' src={award} style={{ right: '-10%', bottom: '-12%' }} className='w-24 h-24 lg:w-16 lg:h-16 xl:w-20 xl:h-20 absolute' />
               </div>
               <h3 className='text-darkBlue pt-4 text-5xl font-extrabold lg:text-3xl xl:text-4xl mb:text-3xl'>{tutor.name}</h3>
               <p className='text-customBlue text-[36px]  lg:text-xl xl:text-2xl mb:text-2xl'>{tutor.bookings}</p>
@@ -63,7 +63,7 @@ const MeeteTutors = () => {
           ))
         }
       </div>
-      <div className='text-[#473171] text-[28px] leading-8   mb:py-5 mb:text-xs py-16 mb:leading-normal  lg:text-xl'>
+      <div className='text-[#473171] text-[28px] leading-8   mb:py-5 mb:text-xs py-16 mb:leading-normal  xl:text-2xl lg:text-lg'>
         <p  >Our eTutors are top students selected for their exceptional knowledge and ability to connect with peers. They understand your challenges and
           provide practical, effective solutions. Always striving to level up, their progress is based on experience, student improvements, and reviews. This
           gamer-like drive ensures you get the best support possible.
