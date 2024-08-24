@@ -40,7 +40,7 @@ const FAQs: React.FC<{ faqData: any[],display:string }> = ({ faqData,display }) 
 
   return (
     <div className={`  pt-8 relative pr-0 flex justify-between w-full m-auto gap-10 mb:flex-col-reverse mb:px-0 mb:pb-16  `}>
-      <div className='w-1/2 mb:w-full '>
+      <div className='w-1/2  mb:w-[60%]'>
         {faqData.map((faq, index) => (
           <FAQ key={index} question={faq.question} answer={faq.answer} />
         ))}

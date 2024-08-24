@@ -14,7 +14,7 @@ const Membership = () => {
         expert-matched tutors, flexible lesson packages, and convenient scheduling options.
       </p>
     </div>
-    <div className='w-[85%] m-auto gap-8 items-center flex py-56 mb:py-24 mb:flex-col mb:gap-10'>
+    <div className='w-[80%] m-auto gap-12 items-center flex py-56 lg:py-40 xl:py-44 mb:py-24 mb:flex-col mb:gap-10'>
         <div className='w-1/3 flex flex-col gap-3 items-center text-center mb:w-full'>
             <Image className='' alt='pricing' src={balance}/>
             <h2 className='text-darkBlue 2xl:mt-8 text-3xl 2xl:text-5xl font-extrabold'> Sensible Pricing</h2>

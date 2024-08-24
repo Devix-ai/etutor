@@ -7,7 +7,7 @@ import icon3 from "../../../../public/assets/icons/icon3.svg"
 import icon4 from "../../../../public/assets/icons/icon4.svg"
 const WhyEtutorWithus = () => {
   return (
-    <div className='px-12 py-16 mb:px-0 mb:py-6 pt-64 lg:px-0 lg:pt-12'>
+    <div className='px-12 py-16 mb:px-0 mb:py-6 pt-64 lg:px-0 lg:pt-12 xl:pt-16'>
       <Headings className='' heading='Why become an eTutor with us?' />
       <div className='py-16 mb:py-4 '>
         <div className='flex  justify-between w-full py-16 mb:flex-col mb:py-4 mb:w-full '>

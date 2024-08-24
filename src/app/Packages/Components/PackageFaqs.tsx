@@ -18,10 +18,10 @@ const PackageFaqs:React.FC = () => {
         { question: 'How flexible are the tutoring sessions?', answer: 'Sessions are highly flexible, allowing you to schedule them at times that best suit you ' },
       ];
   return (
-    <div className='py-32 pl-4 mb:py-10 mb:pl-0 '>
+    <div className='py-32 pl-40 mb:py-10 xl:pl-24 lg:pl-12 mb:pl-0 '>
       <FAQs faqData={PackageFaqs}/>
     </div>
   )
 }
-
+//pt-52 pl-40  lg:pt-0 xl:pt-20 xl:pl-24 lg:pl-12 mb:pl-0 mb:pt-0
 export default PackageFaqs

@@ -8,7 +8,7 @@ import icon4 from "../../../../public/assets/icons/earnicon.svg"
 import icon5 from "../../../../public/assets/icons/flexibleicon.svg"
 const HowToStart = () => {
   return (
-    <div className='px-10 pt-40 mb:px-0  lg:px-0 mb:pt-8'>
+    <div className='px-10 pt-40 mb:px-0  lg:px-0 mb:pt-8 lg:pt-16 xl:pt-16'>
       <Headings heading='How to get started'/>
       <div className='flex justify-between lg:gap-4 gap-12 py-20 mb:py-12 mb:flex-col'>
         
