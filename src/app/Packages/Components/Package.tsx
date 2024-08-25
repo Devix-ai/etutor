@@ -8,7 +8,7 @@ const Package = () => {
         Our most <br /> popular Package
       </h2>
 
-      <div className='w-100 flex justify-between gap-10 h-full py-20 mb:flex-col lg:gap-5 mb:justify-center mb:items-center mb:py-0 mb:gap-12'>
+      <div className='w-100 flex justify-between gap-10 h-full py-20 mb:flex-col lg:gap-5 mb:justify-center mb:items-center mb:py-0 mb:gap-16'>
   <div className='relative w-[30%] mt-10 mb:w-11/12  h-full'>
     <div className='absolute inset-0 transform -translate-x-4 h-auto translate-y-4 bg-[#CFCCDD] rounded-3xl shadow-lg' ></div>
     <div className='relative bg-white rounded-3xl border-[#646493] border-2'>
@@ -35,7 +35,7 @@ const Package = () => {
   </div>
 
   <div className='relative w-[30%] mb:w-11/12 h-full'>
-    <div className='absolute inset-0 transform -translate-y  bg-[#CFCCDD] rounded-3xl shadow-lg mb-4 mb:-translate-x-4 mb:-mb-4 mb:mt-4' ></div>
+    <div className='absolute inset-0 transform translate-y-8 mb:translate-y-0  bg-[#CFCCDD] rounded-3xl shadow-lg mb-4 mb:-translate-x-4 mb:-mb-4 mb:mt-4' ></div>
     <div className='relative bg-white rounded-3xl border-[#646493] border-2'>
       <h2 className='bg-[#5553C4] 2xl:text-5xl text-center text-xl text-white font-bold py-4 rounded-t-2xl mb:text-base'>Premium</h2>
       <div className='p-6 mb:p-4 text-center'>
