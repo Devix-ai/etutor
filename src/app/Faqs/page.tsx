@@ -13,6 +13,11 @@ const page = () => {
       <FAQsSection/>
     </div>
     <Footer/>
+
+
+
+
+    
     </>
 
   )
