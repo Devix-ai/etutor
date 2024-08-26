@@ -40,7 +40,9 @@ module.exports = {
       '2xl':{'min':'1600px'}
     },
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 
   
 }
