@@ -33,7 +33,7 @@ module.exports = {
       },
     },
     screens: {
-      'mb': {'min': '300px', 'max': '1000px'},
+      'mb': {'min': '280px', 'max': '1000px'},
       'tb': {'min': '600px', 'max': '1000px'},
       'lg':{'min':'1000px','max':'1300px'},
       'xl':{'min':'1300px','max':'1700px'},
