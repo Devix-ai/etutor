@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import Link from 'next/link';
 
 import Page from '../page';
-import InputHeading from '@/app/TutorSignup/components/InputHeading';
+import InputHeading from '@/app/ETutorSignup/components/InputHeading';
 const SingupQuestions = () => {
   const [selectedLevel, setSelectedLevel] = useState('');
   const [classLevel, setClassLevel] = useState('');

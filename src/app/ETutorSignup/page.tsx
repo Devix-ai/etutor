@@ -3,14 +3,18 @@ import React, { useState } from 'react'
 import StepperControl from './components/StepperControl'
 import Stepper from './components/Stepper'
 import SignUpNavbar from '@/components/SignUpNavbar'
-import ContactInformation from './components/Steps/ContactInformation'
+import ContactInformation from '../TutorSignup/components/ContactInformation'
 import Education from './components/Steps/Education'
 import Experience from './components/Steps/Experience'
 import Review from './components/Steps/Review'
+import FormSteps from './components/FormSteps'
 
 const Page = () => {
 
     const [currentStep,setCurrentStep] = useState(1)
+    const NextStep=()=>{
+      setCurrentStep(currentStep+1)
+    }
     const steps = [
         'Contact Information',
         'Education',
@@ -20,13 +24,13 @@ const Page = () => {
     const displayStep = (step)=>{
         switch(step){
             case 1:
-                return <ContactInformation/>;
+                return <ContactInformation NextStep={NextStep} />;
             case 2:
-                return <Education/>;
+                return <Education NextStep={NextStep}/>;
             case 3:
-                return <Experience/>;
+                return <Experience NextStep={NextStep}/>;
             case 4:
-                return <Review/>   
+                return <Review NextStep={NextStep}/>   
                 default  :   
         }
     }
@@ -37,13 +41,13 @@ const Page = () => {
       <div>
         <SignUpNavbar/>
       </div>
-      <div className='flex '>
-      <div className='w-1/4'>
-      <Stepper steps={steps} currentStep={currentStep} />
+      <div className='flex justify-between w-[90%] mx-auto'>
+      <div className='w-1/4 mt-32 ml-10'>
+      <FormSteps steps={steps} currentStep={currentStep}/>
       </div>
       {/* Navigation */}
-      <div className='w-3/4'>
-      <StepperControl/>
+      <div className='w-[70%]'>
+      {displayStep(currentStep)}
       </div>
       </div>
     

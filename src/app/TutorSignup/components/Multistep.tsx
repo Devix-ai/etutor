@@ -14,8 +14,8 @@ const steps = [
 ];
 
 const MultiStepForm = () => {
-  const count = useAppSelector(state =>state.counter)
-  const [currentStep, setCurrentStep] = useState(1);
+  // const count = useAppSelector(state =>state.counter)
+  const [currentStep, setCurrentStep] = useState(2);
 
   const nextStep = () => setCurrentStep(currentStep + 1);
 
@@ -92,7 +92,8 @@ const MultiStepForm = () => {
                 onClick={nextStep}
                 className="bg-darkBlue text-white px-4 py-2 rounded"
               >
-                Continue {count}
+                {/* Continue {count} */}
+                contiue
               </button>
             
           </div>

@@ -1,13 +1,13 @@
 'use client'
 import React, { useState } from 'react'
-import FormHeading from './FormHeading'
-import InputHeading from './InputHeading' 
+import FormHeading from '../../ETutorSignup/components/FormHeading'
+import InputHeading from '../../ETutorSignup/components/InputHeading' 
 import Image from 'next/image'
 import dropdown from "../../../../public/assets/icons/downarrow.svg"
 import uparrow from "../../../../public/assets/icons/uparrow.svg"
 import ContinueBtn from '@/app/ETutorSignup/components/ContinueBtn'
 import ConfirmBtn from '@/app/ParentSignup/Components/ConfirmBtn'
-const ContactInformation = () => {
+const ContactInformation = ({NextStep}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false) ;
 
   const subjects = ['Option 1','Option 2','Option 3','Option 4'];
@@ -24,7 +24,7 @@ const ContactInformation = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
   return (
-    <div className='bg-questionbg p-16 rounded-3xl'>
+    <div className='bg-questionbg p-14 rounded-[30px]'>
      <FormHeading className='' heading='Contact Information' paragraph='Thank you for your interest in becoming an etutor! Complete this application and take the next step 
 toward empowering learners.'/>
       <form className='pt-12 pr-10 flex flex-col gap-10' action="">
@@ -61,7 +61,7 @@ toward empowering learners.'/>
           <InputHeading text='First Name' />
           <div className='rounded-full bg-purpleBtn px-10 py-4 w-4/5'>
   <input type="text" 
-         className='placeholder-darkpurple text-2xl text-purple placeholder:text-3xl w-full bg-transparent outline-none mb:text-xs' 
+         className='placeholder-darkpurple text-2xl text-[#685AAD] placeholder:text-[22px] w-full bg-transparent outline-none mb:text-xs' 
          placeholder='First Name' />
 </div>
 
@@ -71,7 +71,7 @@ toward empowering learners.'/>
           <InputHeading text='Last Name' />
           <div className='rounded-full bg-purpleBtn px-10 py-4 w-4/5'>
   <input type="text" 
-         className='placeholder-darkpurple text-2xl text-purple  w-full bg-transparent outline-none mb:text-xs' 
+         className='placeholder-darkpurple placeholder:text-[22px] text-2xl text-[#685AAD]  w-full bg-transparent outline-none mb:text-xs' 
          placeholder='Last Name' />
 </div>
 
@@ -85,12 +85,12 @@ toward empowering learners.'/>
           <InputHeading text='Zip Name' />
           <div className='rounded-full bg-purpleBtn px-10 py-4 w-4/5'>
   <input type="text" 
-         className='placeholder-darkpurple text-2xl text-purple placeholder:text-3xl w-full bg-transparent outline-none mb:text-xs' 
+         className='placeholder-darkpurple text-2xl text-[#685AAD] placeholder:text-[22px] w-full bg-transparent outline-none mb:text-xs' 
          placeholder='Zip Code' />
 </div>
 <div className=' w-4/5'>
 
-<ConfirmBtn btnName='Continue' />
+<ConfirmBtn btnName='Continue' className='text-3xl font-medium' onClick={NextStep}/>
 </div>
 
             </div>
@@ -99,7 +99,7 @@ toward empowering learners.'/>
           <InputHeading text='Email' />
           <div className='rounded-full bg-purpleBtn px-10 py-4 w-4/5'>
   <input type="text" 
-         className='placeholder-darkpurple text-2xl text-purple placeholder:text-3xl w-full bg-transparent outline-none mb:text-xs' 
+         className='placeholder-darkpurple text-2xl text-[#685AAD] placeholder:text-[22px] w-full bg-transparent outline-none mb:text-xs' 
          placeholder='Email' />
          
 </div>
