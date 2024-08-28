@@ -24,8 +24,10 @@
 }
 @layer components{
   .para-global{
-    @apply text-[#473171]  text-[2rem] leading-tight xl:text-2xl lg:text-xl mb:text-sm;
+    @apply text-[#473171]  text-[32px] text-left leading-tight xl:text-2xl lg:text-xl mb:text-sm;
   }
+  
+
 }
 
 

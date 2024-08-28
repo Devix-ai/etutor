@@ -8,7 +8,7 @@ import Education from './components/Steps/Education'
 import Experience from './components/Steps/Experience'
 import Review from './components/Steps/Review'
 import FormSteps from './components/FormSteps'
-
+import './components/ScrollBar.css'
 const Page = () => {
 
     const [currentStep,setCurrentStep] = useState(1)
@@ -46,7 +46,7 @@ const Page = () => {
       <FormSteps steps={steps} currentStep={currentStep}/>
       </div>
       {/* Navigation */}
-      <div className='w-[70%]'>
+      <div className='w-[70%] pb-20 overflow-y-auto max-h-screen scroll-hidden'>
       {displayStep(currentStep)}
       </div>
       </div>
