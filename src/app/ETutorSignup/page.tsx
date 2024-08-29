@@ -9,6 +9,7 @@ import Experience from './components/Steps/Experience'
 import Review from './components/Steps/Review'
 import FormSteps from './components/FormSteps'
 import './components/ScrollBar.css'
+import ThankYou from './components/Steps/ThankYou'
 const Page = () => {
 
     const [currentStep,setCurrentStep] = useState(1)
@@ -30,7 +31,9 @@ const Page = () => {
             case 3:
                 return <Experience NextStep={NextStep}/>;
             case 4:
-                return <Review NextStep={NextStep}/>   
+                return <Review NextStep={NextStep}/>;   
+            case 5:
+                return <ThankYou NextStep={NextStep}/>;   
                 default  :   
         }
     }

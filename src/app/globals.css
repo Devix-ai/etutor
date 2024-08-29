@@ -13,7 +13,10 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+@font-face {
+  font-family: 'azonix';
+  src: url('../../public/assets/fonts/Azonix.otf');
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

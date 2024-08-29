@@ -1,0 +1,22 @@
+.bg-level-1 {
+    background-image: url('../../../../public/assets/comingsoon/comingbg.png');
+    /* background-repeat: no-repeat; */
+    background-position: center;
+  }
+  
+  .bg-level-2 {
+    background-image: url('/path-to-background-image-2.jpg');
+  }
+  
+  .bg-level-3 {
+    background-image: url('/path-to-background-image-3.jpg');
+  }
+  
+  .bg-level-4 {
+    background-image: url('/path-to-background-image-4.jpg');
+  }
+  
+  .bg-level-5 {
+    background-image: url('/path-to-background-image-5.jpg');
+  }
+  

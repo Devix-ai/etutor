@@ -26,10 +26,12 @@ module.exports = {
         lightpurple:'#9B85C8',
         formpurple:'#8458F8',
         lightgray:'#534988',
-        lightblue:'#635BFF'
+        lightblue:'#635BFF',
+        reviewbg:'#DAD1F2'
       },
       fontFamily: {
         roboto: ['Roboto-Condensed', 'sans-serif'],
+        azonix:['azonix']
       },
     },
     screens: {
