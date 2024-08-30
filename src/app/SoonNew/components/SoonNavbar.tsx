@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const menuItems = [
-  { level: 0, text: 'Coming Soon' },
-  { level: 1, text: 'About Us' },
-  { level: 2, text: 'Features' },
-  { level: 3, text: 'Kickstart' },
-  { level: 4, text: 'Support' },
+  { level: 0, text: 'Coming Soon', href: '/SoonNew/Level0' },
+  { level: 1, text: 'About Us', href: '/SoonNew/Level1' },
+  { level: 2, text: 'Features', href: '/SoonNew/Level2' },
+  { level: 3, text: 'Kickstart', href: '/SoonNew/Level3' },
+  { level: 4, text: 'Support', href: '/SoonNew/Level4' },
 ];
 
 const SoonNavbar = () => {
@@ -22,10 +22,11 @@ const SoonNavbar = () => {
               className='flex items-center text-lg font-bold'
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              style={{ width: '100px' }} // Ensure a fixed width for consistency
             >
-              <Link href={`/soon-new/${item.level}`}>
+              <Link href={item.href}>
                 <p
-                  className={`text-white transition-all duration-200 ${
+                  className={`text-white transition-colors duration-300 ease-in-out ${
                     hoveredIndex === index ? 'text-gray-400' : ''
                   }`}
                 >

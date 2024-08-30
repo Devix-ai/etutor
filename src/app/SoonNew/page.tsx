@@ -1,5 +1,5 @@
 import React from 'react'
-import Level1 from './components/Level1'
+import Level1 from './components/Level0'
 
 const Page = () => {
   return (

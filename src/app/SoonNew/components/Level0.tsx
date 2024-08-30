@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/level.css'
-const Level1 = () => {
+const Level0 = () => {
   return (
     <div className='h-[80vh] pt-16 flex flex-col justify-between items-center' >
       <h2 className='text-[10rem] font-azonix text-white' >Coming Soon</h2>
@@ -9,4 +9,4 @@ const Level1 = () => {
   )
 }
 
-export default Level1
+export default Level0
