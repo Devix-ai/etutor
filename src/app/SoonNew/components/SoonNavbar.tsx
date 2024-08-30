@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const menuItems = [
-  { level: 0, text: 'Coming Soon', href: '/SoonNew/Level0' },
+  { level: 0, text: 'Coming Soon', href: '/SoonNew' },
   { level: 1, text: 'About Us', href: '/SoonNew/Level1' },
   { level: 2, text: 'Features', href: '/SoonNew/Level2' },
   { level: 3, text: 'Kickstart', href: '/SoonNew/Level3' },
