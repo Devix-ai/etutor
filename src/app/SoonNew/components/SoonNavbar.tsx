@@ -34,12 +34,12 @@ const SoonNavbar = () => {
   };
 
   return (
-    <nav className='py-11 w-[50%] tb:w-[60%] mx-auto'>
-      <ul className='flex items-center justify-between w-full'>
+    <nav className='py-11 container mx-auto h-16 max-w-[900px] mb:max-w-[400px] mb:px-5 mb:flex mb:justify-center mb:items-center'>
+      <ul className='flex items-center justify-between w-full '>
         {menuItems.map((item, index) => (
           <li
             key={item.level}
-            className='flex items-center justify-between text-[16px] lg:text-[13px] font-bold w-[15%] text-center'
+            className='flex items-center justify-between text-[16px] lg:text-[13px] font-bold w-[15%] text-center mb:text-[9px]'
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handleClick(index)}

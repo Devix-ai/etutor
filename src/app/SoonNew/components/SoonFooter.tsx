@@ -30,7 +30,7 @@ const SoonFooter = () => {
             Notify me
           </div>
         </div>
-        <div className='flex justify-center gap-14 py-12'>
+        <div className='flex justify-center gap-14 py-12 mb:gap-8'>
           {icons.map((icon, index) => (
             <div key={index} className='flex items-center justify-center'>
               <Image

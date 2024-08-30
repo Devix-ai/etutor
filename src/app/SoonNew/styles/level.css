@@ -13,11 +13,19 @@
     background-image: url('/path-to-background-image-3.jpg');
   }
   
-  .bg-level-4 {
-    background-image: url('/path-to-background-image-4.jpg');
+  .level3{
+    background-image: url(../../../../public/level3.svg);
+    background-size: cover;
+    background-position: center;
   }
   
-  .bg-level-5 {
-    background-image: url('/path-to-background-image-5.jpg');
+
+  
+  .level4 {
+    background-image: url(../../../../public/level4bg.svg);
+    background-size: cover;
+    background-position: center;
+ 
+  
   }
   
