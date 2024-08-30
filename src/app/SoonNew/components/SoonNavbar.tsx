@@ -1,19 +1,41 @@
-// app/SoonNew/components/SoonNavbar.tsx
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import Link from 'next/link';
 
+const menuItems = [
+  { level: 0, text: 'Coming Soon' },
+  { level: 1, text: 'About Us' },
+  { level: 2, text: 'Features' },
+  { level: 3, text: 'Kickstart' },
+  { level: 4, text: 'Support' },
+];
+
 const SoonNavbar = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <nav className=' py-11 w-[50%] mx-auto'>
+    <nav className='py-11 w-[50%] mx-auto'>
       <ul className='flex justify-between items-center w-full'>
-        {[1, 2, 3, 4, 5].map((level, index) => (
-          <React.Fragment key={level}>
-            <li className='flex items-center text-lg font-bold'>
-              <Link href={`/soon-new/${level}`}>
-                <p className='text-white hover:text-gray-400'>{`Level ${level}`}</p>
+        {menuItems.map((item, index) => (
+          <React.Fragment key={item.level}>
+            <li
+              className='flex items-center text-lg font-bold'
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <Link href={`/soon-new/${item.level}`}>
+                <p
+                  className={`text-white transition-all duration-200 ${
+                    hoveredIndex === index ? 'text-gray-400' : ''
+                  }`}
+                >
+                  {hoveredIndex === index ? item.text : `Level ${item.level}`}
+                </p>
               </Link>
             </li>
-            {index < 4 && <span className='text-white '>|</span>}
+            {index < menuItems.length - 1 && (
+              <span className='text-white'> | </span>
+            )}
           </React.Fragment>
         ))}
       </ul>

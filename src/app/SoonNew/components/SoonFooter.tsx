@@ -36,7 +36,7 @@ const SoonFooter = () => {
               <Image
                 src={icon}
                 alt={`Icon ${index + 1}`}
-                className='cursor-pointer hover:opacity-75'
+                className='cursor-pointer hover:scale-125 ease-in-out duration-300 hover:shadow-[0 4px 6px rgba(255, 255, 255, 0.5), 0 1px 3px rgba(255, 255, 255, 0.3)]  '
               />
             </div>
           ))}
