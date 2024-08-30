@@ -17,7 +17,10 @@
   font-family: 'azonix';
   src: url('../../public/assets/fonts/Azonix.otf');
 }
-
+@font-face {
+  font-family: 'roboto_medium';
+  src: url('../../public/assets/fonts/Roboto-Medium.ttf');
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

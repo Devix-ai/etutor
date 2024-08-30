@@ -31,7 +31,8 @@ module.exports = {
       },
       fontFamily: {
         roboto: ['Roboto-Condensed', 'sans-serif'],
-        azonix:['azonix']
+        azonix:['azonix'],
+        roboto_medium:['roboto_medium']
       },
     },
     screens: {

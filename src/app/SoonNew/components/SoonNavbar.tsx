@@ -18,28 +18,28 @@ const SoonNavbar = () => {
 
   const handleClick = (index: number) => {
     setSelectedIndex(index);
-    // Optionally, reset hoveredIndex to prevent hover state from showing
+    // Ensure hover state is reset on click
     setHoveredIndex(null);
   };
 
   const getText = (index: number) => {
-    // Display text based on selection or hover state
-    if (selectedIndex === index) {
-      return menuItems[index].text;
+    // Determine text based on selected or hovered state
+    if (selectedIndex !== null && selectedIndex === index) {
+      return menuItems[selectedIndex].text;
     }
-    if (hoveredIndex === index) {
-      return menuItems[index].text;
+    if (hoveredIndex !== null && hoveredIndex === index) {
+      return menuItems[hoveredIndex].text;
     }
     return `Level ${menuItems[index].level}`;
   };
 
   return (
     <nav className='py-11 container mx-auto h-16 max-w-[900px] mb:max-w-[400px] mb:px-5 mb:flex mb:justify-center mb:items-center'>
-      <ul className='flex items-center justify-between w-full '>
+      <ul className='flex items-center justify-between w-full'>
         {menuItems.map((item, index) => (
           <li
             key={item.level}
-            className='flex items-center justify-between text-[16px] lg:text-[13px] font-bold w-[15%] text-center mb:text-[9px]'
+            className={`flex items-center justify-between text-[16px] lg:text-[13px] font-bold ${index === menuItems.length - 1 ? 'w-auto' : 'w-[15%]'} text-center mb:text-[9px]`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={() => handleClick(index)}

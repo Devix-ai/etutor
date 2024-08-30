@@ -6,7 +6,7 @@ import Level0 from './components/Level0'
 
 const Page = () => {
   return (
-    <div>
+    <div className='bg-level-1 ' >
       <SoonNavbar/>
       <Level0/>
       <SoonFooter/>
