@@ -5,7 +5,8 @@
   }
   
   .bg-level-2 {
-    background-image: url('/path-to-background-image-2.jpg');
+    background-image: url('../../../../public/assets/comingsoon/level1bg.png');
+    background-position: center;
   }
   
   .bg-level-3 {

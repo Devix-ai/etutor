@@ -2,9 +2,9 @@ import React from 'react'
 import '../styles/level.css'
 const Level0 = () => {
   return (
-    <div className='h-[80vh] pt-16 flex flex-col justify-between items-center' >
-      <h2 className='text-[10rem] font-azonix text-white' >Coming Soon</h2>
-      <p className='text-white text-3xl font-semibold max-w-lg text-center' >Sign up to be the first to know when you can create your account!</p>
+    <div className='h-[80vh] xl:h-[70vh] lg:h-[60vh] pt-16 flex flex-col justify-between items-center' >
+      <h2 className='text-[10rem] font-azonix text-white xl:text-[7.5rem] lg:text-[6rem] tb:text-[4rem] mb:text-[3rem] mb:text-center' >Coming Soon</h2>
+      <p className='text-white text-3xl font-semibold max-w-lg text-center xl:text-2xl lg:text-2xl' >Sign up to be the first to know when you can create your account!</p>
     </div>
   )
 }
