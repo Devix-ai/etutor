@@ -61,9 +61,9 @@ const SessionsDashboard = () => {
     switch (activeSidebarItem) {
       case "Dashboard":
         return (
-          <div className="border-2 bg-red-400 h-screen absolute w-screen top-0 left-[21%] border-blue -z-10">
+          <div>
             {/* <Dashboard /> */}
-
+            
           </div>
         );
       case "My Sessions":
@@ -90,7 +90,7 @@ const SessionsDashboard = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-white relative z-0">
+    <div className="flex min-h-screen bg-white">
       {/* Sidebar */}
       <aside
         className={`${
@@ -231,7 +231,7 @@ const SessionsDashboard = () => {
               <ChevronDown size={24} className="cursor-pointer ml-1" />
             </button>
             {isProfileOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border-2 border-black top-full ">
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 top-full">
                 <a
                   href="#"
                   className="block px-4 py-2 text-sm text-darkBlue hover:bg-purple"
