@@ -11,6 +11,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       colors: {
         customBlue: '#8653FF',
         customPink: '#00DAE5',
@@ -36,6 +37,12 @@ module.exports = {
       },
     },
     screens: {
+      'sm': {'min': '640px'},
+      'md': {'min': '768px'},
+      'custom-lg': {'min': '1024px'},
+      'custom-xl': {'min': '1280px'},
+      'custom-2xl': {'min': '1536px'},
+      
       'mb': {'min': '280px', 'max': '1000px'},
       'tb': {'min': '600px', 'max': '1000px'},
       'lg':{'min':'1000px','max':'1300px'},
