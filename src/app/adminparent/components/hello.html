@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lobster');
+
+body{
+  color: #444444;
+  background: #009674;
+}
+
+.recipe-header{
+  
+}
+
+
+
+.recipe-tab {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  list-style: none;
+  margin: 50px 0 0;
+  font-size: 24px;
+  padding: 0;
+  line-height: 24px;
+  overflow: hidden;
+  position: relative;
+  
+}
+.recipe-tab li {
+  border: 3px solid #009674;
+  padding: 10px 28px 8px;
+  background-color: #FFF;
+  margin-right: 5px;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  color: #009674;
+}
+/*.recipe-tab a {
+  color: #009674;;
+  text-decoration: none;
+}*/
+.recipe-tab li.selected {
+  background: #FFF;
+  z-index: 2;
+  border-bottom-color: #FFF;
+}
+
+.recipe-content{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #ffffff;
+  width: 60%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.recipe-tab li:before,
+.recipe-tab li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;  
+  background-color: #FFF;
+  
+}
+.recipe-tab li:before {
+  left: -24px;
+  transform: skew(-25deg, 0deg);
+  border-left: 3px solid #009674;
+}
+.recipe-tab li:after {
+  right: -24px;
+  transform: skew(25deg, 0deg);
+  border-right: 3px solid #009674;
+}
+
+.recipe-tab li:before {
+  border-radius: 8px 0 0 0;
+}
+.recipe-tab li:after {
+  border-radius: 0 8px 0 0;
+}
+
+.recipe-tab li.selected:before,
+.recipe-tab li.selected:after{
+  background: #FFF;
+  border-bottom: 3px solid #ffffff;
+}
+
+
+.tabs{
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tabs:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.tabs .tab {
+  display: inline;
+  
+  
+}
+
+.tabs .tab-label {
+  font-size: 18px;
+  vertical-align: bottom;
+  font-family: 'Lobster', cursive;
+  border: 3px solid #009674;
+  padding: 15px 22px 8px;
+  background-color: #FFF;
+  margin-right: -9px;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  color: #009674;
+}
+
+.tabs .tab-label:before,
+.tabs .tab-label:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 33px;  
+  background-color: #FFF;
+  
+}
+.tabs .tab-label:before {
+  left: -17px;
+  transform: skew(-25deg, 0deg);
+  border-left: 3px solid #009674;
+}
+.tabs .tab-label:after {
+  right: -17px;
+  transform: skew(25deg, 0deg);
+  border-right: 3px solid #009674;
+}
+
+.tabs .tab-label:before {
+  border-radius: 8px 0 0 0;
+}
+.tabs .tab-label:after {
+  border-radius: 0 8px 0 0;
+}
+
+.recipe-tab li.selected:before,
+.recipe-tab li.selected:after{
+  background: #FFF;
+  border-bottom: 3px solid #ffffff;
+}
+
+.tabs .tab [type="radio"]:hover:checked + .tab-label,
+.tabs .tab-label:hover,
+.tabs .tab-label:hover:before,
+.tabs .tab-label:hover:after {
+  background-color: #009674;
+  color: white;
+  cursor: pointer;
+  border-bottom-color: #009674;
+}
+
+.tabs .tab > [type="radio"] {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  opacity: 0;
+  position: fixed;
+  width: 1px;
+  z-index: -1;
+}
+
+.tabs .tab-panel {
+  display: inline;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  width: 0;
+}
+
+.tabs .tab-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  background: white;
+  border-radius: 15px;
+  padding: 50px;
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+.tabs .tab-content h2{
+  text-align: center;
+  margin-bottom:45px;
+}
+
+.tabs .tab [type="radio"]:checked + .tab-label {
+  background: white;
+  border-bottom-width: 0;
+  padding-bottom: 11px;
+  z-index: 1;
+}
+
+.tabs .tab .tab-label .word-recipe{
+ display:none;
+}
+
+.tabs .tab [type="radio"]:checked + .tab-label .word-recipe{
+  display:inline;
+}
+
+.tabs .tab [type="radio"]:checked ~ .tab-panel {
+  display: inline;
+}
+    </style>
+</head>
+<body>
+    <div class="recipe-header">
+       
+      </div>
+      
+      <div class="tabs">
+        <div class="tab">
+          <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
+          <label class="tab-label" for="tab-1"><span class="word-recipe">Recipe</span> 1</label>
+      
+          <div class="tab-panel">
+            <div class="tab-content">
+              <h2>Fluffy Pancakes</h3>
+            </div>
+          </div> 
+        </div>
+      
+        <div class="tab">
+          <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
+          <label class="tab-label" for="tab-2"><span class="word-recipe">Recipe</span> 2</label>
+      
+          <div class="tab-panel">
+            <div class="tab-content">
+              <h2>Best Brownies</h2>
+            </div>
+          </div> 
+        </div>
+        
+          <div class="tab">
+          <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
+          <label class="tab-label" for="tab-3"><span class="word-recipe">Recipe</span> 3</label>
+      
+          <div class="tab-panel">
+            <div class="tab-content">
+              <h2>Cookies</h2>
+            </div>
+          </div> 
+        </div>
+        
+         <div class="tab">
+          <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1" checked>
+          <label class="tab-label" for="tab-4"><span class="word-recipe">Recipe</span> 4</label>
+      
+          <div class="tab-panel">
+            <div class="tab-content">
+              <h2>Fluffy Pancakes</h3>
+            </div>
+          </div> 
+        </div>
+      
+        <div class="tab">
+          <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
+          <label class="tab-label" for="tab-5"><span class="word-recipe">Recipe</span> 5</label>
+      
+          <div class="tab-panel">
+            <div class="tab-content">
+              <h2>Best Brownies</h2>
+            </div>
+          </div> 
+        </div>
+        
+          <div class="tab">
+          <input class="tab-radio" type="radio" id="tab-6" name="tab-group-1">
+          <label class="tab-label" for="tab-6"><span class="word-recipe">Recipe</span> 6</label>
+      
+          <div class="tab-panel">
+            <div class="tab-content">
+              <h2>Cookies</h2>
+            </div>
+          </div> 
+        </div>
+      </div>
+      
+      
+        <ul class="recipe-tab">
+          <li>Recipe 1</li>
+          <li>Recipe 2</li>
+          <li class="selected">Recipe 3</li>
+          <li>Recipe 4</li>
+        </ul>
+      <div class="recipe-content">
+        <h2>Best Brownies</h2>
+      </div>
+      <script>
+           $("li").click(function(e) {
+        e.preventDefault();
+        $("li").removeClass("selected");
+        $(this).addClass("selected");
+      });
+      </script>
+</body>
+</html>
