@@ -42,7 +42,8 @@ import bellgray from "../../../public/bellicongrat.svg";
 import chaticon from "../../../public/chaticon.svg";
 import refergray from "../../../public/grayrefer.svg";
 import rightarrow from "../../../public/arrowwww.svg";
-
+import Calender from './components/Calender'
+import MyEtutor from "./components/MyEtutor";
 const SessionsDashboard = () => {
   const [activeSidebarItem, setActiveSidebarItem] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -373,14 +374,28 @@ const SessionsDashboard = () => {
 
       // ---------------------------My session--------------------------------------------------------------
       case "My Sessions":
-        return <Session />;
+        return (
+          <Session 
+          setActiveFindEtutor={setActiveSidebarItem}
+          setActiveMYEtutor={setActiveSidebarItem}
+          />
+
+        )
 
 
 
       case "Calendar":
-        return <div>Calendar Content</div>;
+        return (
+          <>
+             <Calender 
+            
+              />
+          </>
+        );
       case "My eTutor":
-        return <div>My eTutor Content</div>;
+        return (
+          <MyEtutor/>
+        );
       case "Find eTutor":
         return <div>Find eTutor Content</div>;
       case "My Membership":
@@ -423,10 +438,10 @@ const SessionsDashboard = () => {
                         setIsSidebarOpen(false);
                       }
                     }}
-                    className={`flex items-center w-full px-6 py-3 rounded-[19px] transition-colors ${
+                    className={`flex items-center w-full px-6 py-3 rounded-[19px]  transition-all ${
                       activeSidebarItem === item.name
-                        ? "bg-white text-[#8653FF]"
-                        : "hover:bg-darkpurple"
+                        ? "bg-white text-[#8653FF] transition-all"
+                        : "hover:bg-darkpurple transition-all"
                     }`}
                   >
                     <Image
@@ -442,7 +457,7 @@ const SessionsDashboard = () => {
                     />
                     <p
                       className={`text-[#cac7d8] text-xl ${
-                        activeSidebarItem === item.name ? "text-[#8652ff]" : ""
+                        activeSidebarItem === item.name ? "text-[#8653ff]" : "text-[#cac7d8]"
                       }`}
                     >
                       {item.name}
@@ -516,15 +531,18 @@ const SessionsDashboard = () => {
                     setActiveSidebarItem(previousSidebarItem); // Navigate back to previous item
                   }
                 }}
-                className="flex cursor-pointer"
+                className="flex cursor-pointer  items-center"
               >
                 <ChevronLeft
-                  className="mr-2 cursor-pointer text-darkBlue"
+                  className="mr-2 cursor-pointer text-[#685AAD]"
                   size={24}
                 />
                   
-                <h1 className="text-black">Back</h1>
+                <h1 className="text-[#685AAD] text-xs sm:text-sm custom-lg:text-xl hidden sm:block">Back</h1>
               </div>
+            )}
+            {activeSidebarItem === "My Sessions"&& (
+              <h1 className="text-[#685AAD]  text-sm sm:text-md custom-lg:text-4xl font-extrabold ml-0 sm:ml-6 absolute top-16 left-16 sm:static">My&nbsp;Sessions</h1>
             )}
           </div>
 
