@@ -38,7 +38,7 @@ const Navbar = () => {
         <Image className='w-[7rem] lg:w-[5rem]' src={icon}  />
       </div>
 
-    <Link href='/SignupAs' >  <button className= '  font-medium text-customBlue !text-[27px] focus:outline-none	xl:!text-2xl lg:!text-lg'>SIGN IN</button></Link>
+    <Link href='/signin' >  <button className= '  font-medium text-customBlue !text-[27px] focus:outline-none	xl:!text-2xl lg:!text-lg'>SIGN IN</button></Link>
       {/* <button className='bg-customBlue '>SIGN UP</button> */}
      <Link href='/SignupAs' ><Button className='!text-[27px]  px-8 py-3 font-extrabold  xl:!text-2xl xl:px-6 xl:py-3 lg:!text-lg lg:px-6 lg:py-2' btnName='SIGN UP' /></Link> 
       </div>

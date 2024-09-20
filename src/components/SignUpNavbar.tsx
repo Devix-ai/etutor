@@ -4,8 +4,8 @@ import logo from "../../public/assets/signup/signuplogo.svg"
 import Link from 'next/link'
 const SignUpNavbar = () => {
   return (
-    <div className='px-20 pt-20 mb:p-5'>
-    <Link href='/' > <Image src={logo} alt='' className='cursor-pointer w-32'/></Link> 
+    <div className='px-16 pt-16 mb:p-5 transition-all'>
+    <Link href='/' > <Image src={logo} alt='' className='cursor-pointer w-28'/></Link> 
     </div>
   )
 }
