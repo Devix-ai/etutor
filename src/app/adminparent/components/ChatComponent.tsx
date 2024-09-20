@@ -1,0 +1,133 @@
+import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+import { Send, MessageSquare, Folder, User } from 'lucide-react';
+
+const TutorListItem = ({ tutor, isActive, onClick, lastMessage }) => (
+  <div 
+    className={`flex items-center p-4 cursor-pointer ${isActive ? 'bg-[#A296CC] text-white' : 'hover:bg-[#C8BFE7]'}`}
+    onClick={onClick}
+  >
+    <Image src={tutor.image} alt={tutor.name} width={40} height={40} className="rounded-full mr-3" />
+    <div className="flex-grow">
+      <p className={`font-semibold ${isActive ? 'text-white' : 'text-[#473171]'}`}>{tutor.name}</p>
+      <p className={`text-sm truncate ${isActive ? 'text-gray-200' : 'text-gray-600'}`}>{lastMessage}</p>
+    </div>
+  </div>
+);
+
+const ChatMessage = ({ message, isUser }) => (
+  <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
+    <div className={`max-w-[70%] rounded-lg p-3 ${isUser ? 'bg-[#685AAD] text-white' : 'bg-white text-[#473171]'}`}>
+      <p>{message.text}</p>
+      <span className="text-xs opacity-70 mt-1 block">{message.time}</span>
+    </div>
+  </div>
+);
+
+const ChatComponent = () => {
+  const [activeTutor, setActiveTutor] = useState(0);
+  const [tutors, setTutors] = useState([
+    { id: 0, name: "Mr. Abderrahman", image: "/api/placeholder/40/40", messages: [] },
+    { id: 1, name: "Ms. Johnson", image: "/api/placeholder/40/40", messages: [] },
+    { id: 2, name: "Dr. Smith", image: "/api/placeholder/40/40", messages: [] },
+  ]);
+  const [newMessage, setNewMessage] = useState("");
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [tutors]);
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (newMessage.trim()) {
+      const updatedTutors = [...tutors];
+      updatedTutors[activeTutor].messages.push({ 
+        id: updatedTutors[activeTutor].messages.length + 1, 
+        text: newMessage, 
+        isUser: true, 
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      });
+      setTutors(updatedTutors);
+      setNewMessage("");
+      
+      // Simulate tutor response
+      setTimeout(() => {
+        const tutorResponse = generateTutorResponse(newMessage);
+        const updatedTutorsWithResponse = [...updatedTutors];
+        updatedTutorsWithResponse[activeTutor].messages.push({ 
+          id: updatedTutorsWithResponse[activeTutor].messages.length + 1, 
+          text: tutorResponse, 
+          isUser: false, 
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        });
+        setTutors(updatedTutorsWithResponse);
+      }, 1000);
+    }
+  };
+
+  const generateTutorResponse = (userMessage) => {
+    const responses = [
+      "That's an interesting point. Let's discuss it further.",
+      "I understand your concern. Here's what we can do...",
+      "Great question! The answer is...",
+      "Let me clarify that for you.",
+      "I'd be happy to help you with that.",
+      "Can you provide more details about your question?",
+    ];
+    return responses[Math.floor(Math.random() * responses.length)];
+  };
+
+  return (
+    <div className="flex h-screen overflow-hidden   border-red-800">
+      {/* Sidebar */}
+      <div className="w-1/3 bg-[#EDE8FA]  overflow-y-auto">
+        <h2 className="text-2xl font-bold text-[#685AAD] p-4">My eTutors</h2>
+        {tutors.map((tutor) => (
+          <TutorListItem 
+            key={tutor.id}
+            tutor={tutor}
+            isActive={activeTutor === tutor.id}
+            onClick={() => setActiveTutor(tutor.id)}
+            lastMessage={tutor.messages.length > 0 ? tutor.messages[tutor.messages.length - 1].text : "No messages yet"}
+          />
+        ))}
+      </div>
+
+      {/* Chat Area */}
+      <div className="flex-grow flex flex-col rounded-3xl">
+        {/* Chat Header */}
+        <div className="bg-[#A296CC] p-4 flex items-center rounded-t-3xl border-b-2 border-white ">
+          <Image src={tutors[activeTutor].image} alt={tutors[activeTutor].name} width={40} height={40} className="rounded-full mr-3" />
+          <h2 className="text-xl font-bold text-white">{tutors[activeTutor].name}</h2>
+        </div>
+
+        {/* Messages */}
+        <div className="flex-grow overflow-y-auto p-4 bg-[#A296CC]  ">
+          {tutors[activeTutor].messages.map((msg) => (
+            <ChatMessage key={msg.id} message={msg} isUser={msg.isUser} />
+          ))}
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Message Input */}
+        <form onSubmit={handleSendMessage} className="p-4 bg-[#A296CC] border-red-700  rounded-b-3xl">
+          <div className="flex items-center bg-[#8C7AB9] rounded-full">
+            <input
+              type="text"
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+              placeholder="Type a message..."
+              className="flex-grow p-3 bg-transparent text-white placeholder-gray-300 focus:outline-none"
+            />
+            <button type="submit" className="p-3">
+              <Send className="w-6 h-6 text-white" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default ChatComponent;

@@ -276,9 +276,12 @@ const SessionCalendarComponent = () => {
         </div>
       );
     } else {
+      
       return (
-        <div className="mt-4 bg-[#9370DB] p-4 rounded-md h-64">
-          <p className="text-white">Calendar content</p>
+        <div className="w-full min-h-screen border-2 border-red-400">
+           
+
+            
         </div>
       );
     }
@@ -288,20 +291,20 @@ const SessionCalendarComponent = () => {
     <div className="w-full min-h-screen  relative ">
       <div className="flex space-x-2 mb-4  w-fit bg-[#9B85C8] p-3 rounded-full absolute -top-6 custom-xl:-top-20 custom-xl:left-32 transition-all">
         <button
-          className={`px-8 py-1 sm:px-16 sm:py-3 rounded-full text-md font-bold uppercase bg-[#EDE8FA] text-[#6B5692] ${
+          className={`px-8 py-1 sm:px-16 sm:py-3 transition-all rounded-full text-md font-bold uppercase bg-[#EDE8FA] text-[#6B5692] ${
             activeTab === "sessions"
-              ? "bg-[#6B5692] text-white"
-              : "bg-[#EDE8FA] text-[#6B5692]"
+              ? "bg-[#6c5794] text-white transition-all"
+              : "bg-[#EDE8FA] text-[#6B5692] transition-all"
           }`}
           onClick={() => setActiveTab("sessions")}
         >
           Sessions
         </button>
         <button
-          className={`px-8 py-1 sm:px-16 sm:py-3 rounded-full text-md font-bold uppercase bg-[#EDE8FA] text-[#6B5692] ${
+          className={`px-8 py-1 sm:px-16 sm:py-3 rounded-full transition-all text-md font-bold uppercase bg-[#EDE8FA] text-[#6B5692] ${
             activeTab === "calendar"
-              ? "bg-[#6B5692] text-white"
-              : "bg-[#EDE8FA] text-[#6B5692]"
+              ? "bg-[#6c5794] text-white transition-all"
+              : "bg-[#EDE8FA] text-[#6B5692] transition-all"
           }`}
           onClick={() => setActiveTab("calendar")}
         >

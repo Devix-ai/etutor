@@ -16,7 +16,7 @@ const Page = () => {
         <div className='w-1/2 2xl:w-[40%] pt-10 text-center mb:w-full mb:pt-4'>
            <Link href='/ParentSignup' > <QuestionBtn className='font-extrabold py-5 border-none' btnName='I’m a Parent' /></Link>
            <Link href='/StudentSignup' > <QuestionBtn className='font-extrabold py-5 border-none' btnName='I’m a Student' /></Link>
-           <Link href='' > <div className='text-2xl font-extrabold  py-6 text-customOrange mb:text-sm mb:py-3'>I’m an eTutor</div></Link>
+           <Link href='/ETutorSignup' > <div className='text-2xl font-extrabold  py-6 text-customOrange mb:text-sm mb:py-3'>I’m an eTutor</div></Link>
            
         </div>
       </div>

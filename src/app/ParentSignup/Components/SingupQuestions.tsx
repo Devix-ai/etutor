@@ -10,7 +10,7 @@ import line from "../../../../public/assets/icons/line.svg"
 import countryicon from "../../../../public/assets/icons/countryicon.svg"
 import { useNavigate } from 'react-router-dom';
 import Link from 'next/link';
-
+import { useRouter } from 'next/navigation'
 import Page from '../page';
 const SingupQuestions = () => {
   const [selectedLevel, setSelectedLevel] = useState('');
@@ -25,7 +25,7 @@ const SingupQuestions = () => {
   const [isOpenCountry,setIsOpenCountry] = useState(false)
   const [selectedTimeZone,setSelectedTimeZone] = useState('Berlin, GMT +02:200')
   const [countryInfo,setCountryInfo] = useState('Berlin, GMT +02:200')
-
+  
   // const navigate = useNavigate
 
   // const confirmNavigate = ()=>{
@@ -65,6 +65,15 @@ const SingupQuestions = () => {
       img:countryicon,
     },
   ]
+
+
+
+
+ 
+
+
+
+
   const toggleCountry = () => {
     setIsOpenCountry(!isOpenCountry)
   }
@@ -352,10 +361,10 @@ select subject(s)          </button>
     <div>
       
     </div>
-    <Link href='StudentSignup/Confirmation'>
+    <Link href='ParentSignup/Confirmation'>
 <div>
 
-    <ConfirmBtn btnName='Continue' />
+    <ConfirmBtn btnName='Continue'    />
 </div>
 </Link>
 
