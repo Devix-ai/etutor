@@ -438,7 +438,7 @@ const SessionsDashboard = () => {
                         setIsSidebarOpen(false);
                       }
                     }}
-                    className={`flex items-center w-full px-6 py-3 rounded-[19px]  transition-all ${
+                    className={`flex items-center w-full px-6 py-3 rounded-[19px]  transition-all  ${
                       activeSidebarItem === item.name
                         ? "bg-white text-[#8653FF] transition-all"
                         : "hover:bg-darkpurple transition-all"

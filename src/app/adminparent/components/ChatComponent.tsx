@@ -1,25 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Send, MessageSquare, Folder, User } from 'lucide-react';
-
-const TutorListItem = ({ tutor, isActive, onClick, lastMessage }) => (
+import chaticon from '../../../../public/chaticon (2).svg'
+const TutorListItem = ({ tutor, isActive, onClick }:any) => (
   <div 
-    className={`flex items-center p-4 cursor-pointer ${isActive ? 'bg-[#A296CC] text-white' : 'hover:bg-[#C8BFE7]'}`}
+    className={`flex items-center py-5 px-4 cursor-pointer  mr-[3%] rounded-xl my-3 bg-[#A296CC]`}
     onClick={onClick}
   >
     <Image src={tutor.image} alt={tutor.name} width={40} height={40} className="rounded-full mr-3" />
     <div className="flex-grow">
-      <p className={`font-semibold ${isActive ? 'text-white' : 'text-[#473171]'}`}>{tutor.name}</p>
-      <p className={`text-sm truncate ${isActive ? 'text-gray-200' : 'text-gray-600'}`}>{lastMessage}</p>
+      <p className={`font-semibold text-lg ${isActive ? 'text-white' : 'text-white'}`}>{tutor.name}</p>
+      {/* <p className={`text-sm truncate ${isActive ? 'text-gray-200' : 'text-gray-600'}`}>{lastMessage}</p> */}
     </div>
   </div>
 );
 
-const ChatMessage = ({ message, isUser }) => (
-  <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
-    <div className={`max-w-[70%] rounded-lg p-3 ${isUser ? 'bg-[#685AAD] text-white' : 'bg-white text-[#473171]'}`}>
-      <p>{message.text}</p>
-      <span className="text-xs opacity-70 mt-1 block">{message.time}</span>
+const ChatMessage = ({ message, isUser }:any) => (
+  <div className={`flex  ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
+    <div className={`max-w-[70%] rounded-2xl p-3 ${isUser ? 'bg-[#685AAD] text-white' : 'bg-white text-[#473171]'}`}>
+      <p className='text-xl font-medium'>helo helo helo helo helo helo {message.text}</p>
+      <span className={`text-md opacity-70 mt-1 block   ${isUser?"text-white float-right":"text-[#9B85C8]"}`}>{message.time}</span>
     </div>
   </div>
 );
@@ -30,11 +30,14 @@ const ChatComponent = () => {
     { id: 0, name: "Mr. Abderrahman", image: "/api/placeholder/40/40", messages: [] },
     { id: 1, name: "Ms. Johnson", image: "/api/placeholder/40/40", messages: [] },
     { id: 2, name: "Dr. Smith", image: "/api/placeholder/40/40", messages: [] },
+ 
+   
   ]);
   const [newMessage, setNewMessage] = useState("");
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
+    // @ts-ignore
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [tutors]);
 
@@ -43,6 +46,7 @@ const ChatComponent = () => {
     if (newMessage.trim()) {
       const updatedTutors = [...tutors];
       updatedTutors[activeTutor].messages.push({ 
+        
         id: updatedTutors[activeTutor].messages.length + 1, 
         text: newMessage, 
         isUser: true, 
@@ -79,31 +83,36 @@ const ChatComponent = () => {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden   border-red-800">
+    <div className="flex h-screen overflow-hidden    ">
       {/* Sidebar */}
       <div className="w-1/3 bg-[#EDE8FA]  overflow-y-auto">
-        <h2 className="text-2xl font-bold text-[#685AAD] p-4">My eTutors</h2>
+        <h2 className="text-3xl font-bold text-[#685AAD] p-4 ml-6">My eTutors</h2>
+
+        <div className=' overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#685aad40]  scrollbar-thumb-rounded-3xl h-[90%]'>
         {tutors.map((tutor) => (
           <TutorListItem 
-            key={tutor.id}
-            tutor={tutor}
-            isActive={activeTutor === tutor.id}
-            onClick={() => setActiveTutor(tutor.id)}
-            lastMessage={tutor.messages.length > 0 ? tutor.messages[tutor.messages.length - 1].text : "No messages yet"}
+          key={tutor.id}
+          tutor={tutor}
+          isActive={activeTutor === tutor.id}
+          onClick={() => setActiveTutor(tutor.id)}
+          // lastMessage={tutor.messages.length > 0 ? tutor.messages[tutor.messages.length - 1].text : "No messages yet"}
           />
         ))}
+        </div>
       </div>
 
       {/* Chat Area */}
-      <div className="flex-grow flex flex-col rounded-3xl">
+      <div className="flex-grow flex flex-col rounded-3xl  bg-[#A296CC] border-2 border-red-800 max-w-[66%]">
         {/* Chat Header */}
-        <div className="bg-[#A296CC] p-4 flex items-center rounded-t-3xl border-b-2 border-white ">
-          <Image src={tutors[activeTutor].image} alt={tutors[activeTutor].name} width={40} height={40} className="rounded-full mr-3" />
-          <h2 className="text-xl font-bold text-white">{tutors[activeTutor].name}</h2>
+        <div className="bg-[#A296CC] py-4 px-4 flex items-center rounded-t-3xl  pl-8 ">
+          
+          <Image src={chaticon} alt={tutors[activeTutor].name} width={27} height={27} className=" mr-4" />
+          <h2 className="text-2xl font-bold text-white">{tutors[activeTutor].name}</h2>
         </div>
+       
 
         {/* Messages */}
-        <div className="flex-grow overflow-y-auto p-4 bg-[#A296CC]  ">
+        <div className="flex-grow  p-4 bg-[#A296CC] border-t border-[#8b55ff51] mx-4   overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#685aad40]  scrollbar-thumb-rounded-3xl">
           {tutors[activeTutor].messages.map((msg) => (
             <ChatMessage key={msg.id} message={msg} isUser={msg.isUser} />
           ))}
