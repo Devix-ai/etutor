@@ -44,6 +44,12 @@ import refergray from "../../../public/grayrefer.svg";
 import rightarrow from "../../../public/arrowwww.svg";
 import Calender from './components/Calender'
 import MyEtutor from "./components/MyEtutor";
+import FindEtutor from "./components/FindEtutor";
+import MyMembership from "./components/MyMembership";
+import ContactSupport from "./components/ContactSupport";
+import ReferYourFriends from "./components/ReferYourFriends";
+import Setting from "./components/Settings";
+
 const SessionsDashboard = () => {
   const [activeSidebarItem, setActiveSidebarItem] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -397,14 +403,22 @@ const SessionsDashboard = () => {
           <MyEtutor/>
         );
       case "Find eTutor":
-        return <div>Find eTutor Content</div>;
+        return (
+          <div>
+              <FindEtutor/>
+          </div>
+        )
       case "My Membership":
-        return <div>My Membership Content</div>;
+        return <MyMembership/>
       case "Contact Support":
-        return <div>Contact Support Content</div>;
+        return <ContactSupport/>
       case "Refer your Friends":
-        return <div>Refer your Friends Content</div>;
+        return <ReferYourFriends/>
       case "Activity":
+        return <div>Activity Content</div>;
+      case "Settings":
+        return <Setting/>
+      case "Useful links":
         return <div>Activity Content</div>;
       default:
         return <div>Select a tab from the sidebar</div>;

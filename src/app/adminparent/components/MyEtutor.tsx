@@ -20,7 +20,7 @@ function MyEtutor() {
 
   if (showChat) {
     return (
-      <div className="bg-[#EDE8FA] w-full h-fit rounded-3xl p-4">
+      <div className="bg-[#EDE8FA] w-full h-screen rounded-3xl p-4">
         {/* <button 
           onClick={() => setShowChat(false)}
           className="mb-4 px-4 py-2 bg-[#685AAD] text-white rounded-full hover:bg-[#574A91] transition-colors"
@@ -116,6 +116,7 @@ function MyEtutor() {
               </div>
             </div>
           </div>
+          
         </div>
        
       </div>
