@@ -1,4 +1,4 @@
-
+'use client'
 import ContactUs from "@/components/ContactUs";
 import FAQs from "@/components/FAQs";
 import Footer from "@/components/Footer";
