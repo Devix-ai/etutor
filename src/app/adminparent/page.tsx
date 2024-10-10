@@ -49,6 +49,7 @@ import MyMembership from "./components/MyMembership";
 import ContactSupport from "./components/ContactSupport";
 import ReferYourFriends from "./components/ReferYourFriends";
 import Setting from "./components/Settings";
+import UsefulLinks from "./components/UsefulLinks";
 
 const SessionsDashboard = () => {
   const [activeSidebarItem, setActiveSidebarItem] = useState("Dashboard");
@@ -419,7 +420,7 @@ const SessionsDashboard = () => {
       case "Settings":
         return <Setting/>
       case "Useful links":
-        return <div>Activity Content</div>;
+        return  <UsefulLinks/>;
       default:
         return <div>Select a tab from the sidebar</div>;
     }
