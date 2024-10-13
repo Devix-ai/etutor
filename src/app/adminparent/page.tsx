@@ -1,17 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
   ChevronLeft,
-  Settings,
+ 
   Menu,
-  User,
-  LogOut,
-  Calendar,
-  Bell,
-  MessageSquare,
-  Users,
+ 
 } from "lucide-react";
 
 import Dashboard from "./components/Dashboard";
@@ -42,7 +37,7 @@ import bellgray from "../../../public/bellicongrat.svg";
 import chaticon from "../../../public/chaticon.svg";
 import refergray from "../../../public/grayrefer.svg";
 import rightarrow from "../../../public/arrowwww.svg";
-import Calender from './components/Calender'
+import Calender from "./components/Calender";
 import MyEtutor from "./components/MyEtutor";
 import FindEtutor from "./components/FindEtutor";
 import MyMembership from "./components/MyMembership";
@@ -50,12 +45,33 @@ import ContactSupport from "./components/ContactSupport";
 import ReferYourFriends from "./components/ReferYourFriends";
 import Setting from "./components/Settings";
 import UsefulLinks from "./components/UsefulLinks";
+import { useRouter } from "next/navigation";
 
 const SessionsDashboard = () => {
   const [activeSidebarItem, setActiveSidebarItem] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [previousSidebarItem, setPreviousSidebarItem] = useState("");
+  const Router = useRouter()
+
+  const targetRef = useRef<HTMLDivElement>(null); // Reference to your component
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // If the click is outside the component (targetRef), close the dropdown/modal/etc.
+      if (targetRef.current && !targetRef.current.contains(event.target as Node)) {
+        setIsProfileOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
 
   const sidebarItems = [
     { name: "Dashboard", icon: Home1 },
@@ -86,43 +102,41 @@ const SessionsDashboard = () => {
         return (
           <div className="  h-fit    ">
             {/* <Dashboard /> */}
-            
+
             {/* top left box TOKIs */}
-            <div className=" w-[80%] sm:max-w-[30rem]   flex  items-start flex-col custom-xl:flex-row gap-4 absolute top-14 custom-lg:top-0 mt-4  ">
-              <div className="flex flex-col space-y-3 py-3 px-5  bg-purple-100  rounded-2xl w-[100%] sm:w-[25rem] bg-[#EDE8FA]">
-                <div className="flex justify-between items-center bg-purple-300 rounded-full px-4 pl-6 py-2 bg-[#A296CC]">
-                  <div className="text-2xl font-bold">150</div>
+            <div className=" custom-xl:w-[80%] sm:max-w-[40rem]   flex  items-start flex-col custom-2xl:flex-row gap-6 absolute top-14 custom-lg:top-0 mt-4  ">
+              <div className=" flex flex-col space-y-3 py-4 px-6  bg-purple-100  rounded-2xl w-[100%] sm:w-[24rem] bg-[#EDE8FA]">
+                <div className=" flex justify-between items-center bg-purple-300 rounded-full px-4 pl-6 py-[10px] bg-[#A296CC]">
+                  <div className="text-3xl font-bold">150</div>
                   <div className=" flex items-center justify-center">
-                    <Image src={etokiicon} alt="" className="w-7 h-7" />
+                    <Image src={etokiicon} alt="" className="w-9 h-9" />
                   </div>
                 </div>
 
-                <div className="flex  space-x-3 mt-4 hover:cursor-pointer px-2">
-                  <button className="flex-1 bg-[#685AAD] text-white py-[1px] px-4 rounded-md text-xs flex items-center justify-center gap-1 hover:cursor-pointer">
+                <div className="flex  space-x-6 mt-4 hover:cursor-pointer px-2 pt-2">
+                  <button className="flex-1 bg-[#685AAD] text-white py-[2px] px-4  rounded-md text-xs flex items-center justify-center gap-1 hover:cursor-pointer">
                     <Image
                       src={EPlusIcon}
                       alt=""
-                      className="w-4 h-4 hover:cursor-pointer"
+                      className="w-6 h-6 hover:cursor-pointer"
                     />{" "}
                     etokis
                   </button>
-                  <button className="flex-1 bg-[#8653FF] text-white py-[1px] px-4 rounded-md flex items-center justify-center gap-1 hover:cursor-pointer">
+                  <button className="flex-1 bg-[#8653FF] text-white py-[2px] px-4 rounded-md flex items-center justify-center gap-1 hover:cursor-pointer">
                     Redeem
-                    <Image src={redeemIcon} alt="" className="w-4 h-4" />
+                    <Image src={redeemIcon} alt="" className="w-6 h-6" />
                   </button>
                 </div>
               </div>
-              <div className="bg-[#EDE8FA] rounded-lg font-bold px-6 py-2 text-center text-sm text-[#685AAD] ">
+              <div className="bg-[#EDE8FA] rounded-lg font-bold px-8 py-3 text-center text-base text-[#685AAD] ">
                 SESSIONS&nbsp;LEFT:2
               </div>
             </div>
 
-              <div className="block mb-52  sm:mb-56 custom-lg:mb-32 "></div>
-           
-
+            <div className="block mb-60  sm:mb-64 custom-lg:mb-36 ">a</div>
 
             <div className="">
-              <div className="grid gap-4 grid-cols-1 custom-2xl:grid-cols-8 custom-2xl:grid-rows-5 h-screen ">
+              <div className="grid gap-5 grid-cols-1 custom-2xl:grid-cols-8 custom-2xl:grid-rows-5 h-fit ">
                 {/* ------------calendar----------- */}
                 <div className=" p-4 bg-[#EDE8FA] text-[#685AAD] rounded-2xl  col-span-3 row-span-3">
                   <div className="flex  justify-between items-center">
@@ -382,45 +396,38 @@ const SessionsDashboard = () => {
       // ---------------------------My session--------------------------------------------------------------
       case "My Sessions":
         return (
-          <Session 
-          setActiveFindEtutor={setActiveSidebarItem}
-          setActiveMYEtutor={setActiveSidebarItem}
+          <Session
+            setActiveFindEtutor={setActiveSidebarItem}
+            setActiveMYEtutor={setActiveSidebarItem}
           />
-
-        )
-
-
+        );
 
       case "Calendar":
         return (
           <>
-             <Calender 
-            
-              />
+            <Calender />
           </>
         );
       case "My eTutor":
-        return (
-          <MyEtutor/>
-        );
+        return <MyEtutor />;
       case "Find eTutor":
         return (
           <div>
-              <FindEtutor/>
+            <FindEtutor />
           </div>
-        )
+        );
       case "My Membership":
-        return <MyMembership/>
+        return <MyMembership />;
       case "Contact Support":
-        return <ContactSupport/>
+        return <ContactSupport />;
       case "Refer your Friends":
-        return <ReferYourFriends/>
+        return <ReferYourFriends />;
       case "Activity":
         return <div>Activity Content</div>;
       case "Settings":
-        return <Setting/>
+        return <Setting />;
       case "Useful links":
-        return  <UsefulLinks/>;
+        return <UsefulLinks />;
       default:
         return <div>Select a tab from the sidebar</div>;
     }
@@ -432,10 +439,10 @@ const SessionsDashboard = () => {
       <aside
         className={`${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } custom-lg:translate-x-0 fixed custom-lg:static inset-y-0 left-0 z-50 max-w-[40rem]  min-h-screen custom-2xl:w-[21%] rounded-tr-3xl rounded-br-3xl bg-darkpurple text-white flex flex-col transition-transform duration-300 ease-in-out pl-4 pr-7 pt-8 pb-4`}
+        } custom-lg:translate-x-0 fixed custom-lg:static inset-y-0 left-0 z-50 max-w-[20rem] sm:max-w-[25rem] w-full  min-h-screen  rounded-tr-3xl rounded-br-3xl bg-darkpurple text-white flex flex-col transition-transform duration-300 ease-in-out pl-5 pr-9 pt-8 custom-2xl:pt-11 pb-4`}
       >
-        <div className="flex items-center mb-16 pb-2 pl-5">
-          <Image src={logo} alt="" className="w-52" />
+        <div className="flex items-center mb-[23.5%] pb-2 pl-7">
+          <Image src={logo} alt="" className= "w-52 sm:w-[17rem]" />
         </div>
         <nav className="flex-grow flex flex-col">
           <ul className="space-y-2 flex-grow">
@@ -453,15 +460,15 @@ const SessionsDashboard = () => {
                         setIsSidebarOpen(false);
                       }
                     }}
-                    className={`flex items-center w-full px-6 py-3 rounded-[19px]  transition-all  ${
+                    className={`flex items-center w-full px-6 custom-2xl:px-9 py-3 sm:py-[18px] rounded-[22px]  transition-all  ${
                       activeSidebarItem === item.name
-                        ? "bg-white text-[#8653FF] transition-all"
+                        ? "bg-white text-[#8552fb] transition-all"
                         : "hover:bg-darkpurple transition-all"
                     }`}
                   >
                     <Image
                       src={item.icon}
-                      className="w-5 h-5 mr-6"
+                      className="w-5 sm:w-6 h-5 sm:h-6 mr-7"
                       alt=""
                       style={{
                         filter:
@@ -472,7 +479,9 @@ const SessionsDashboard = () => {
                     />
                     <p
                       className={`text-[#cac7d8] text-xl ${
-                        activeSidebarItem === item.name ? "text-[#8653ff]" : "text-[#cac7d8]"
+                        activeSidebarItem === item.name
+                          ? "text-[#814dfc]"
+                          : "text-[#cac7d8]"
                       }`}
                     >
                       {item.name}
@@ -527,7 +536,7 @@ const SessionsDashboard = () => {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 px-7 py-4 overflow-auto  bg-transparent">
+      <main className="flex-1 px-9 py-4 overflow-auto  bg-transparent">
         <header className="flex justify-between items-center mb-8">
           <div className="flex items-center">
             <button
@@ -552,95 +561,102 @@ const SessionsDashboard = () => {
                   className="mr-2 cursor-pointer text-[#685AAD]"
                   size={24}
                 />
-                  
-                <h1 className="text-[#685AAD] text-xs sm:text-sm custom-lg:text-xl hidden sm:block">Back</h1>
+
+                <h1 className="text-[#685AAD] text-xs sm:text-sm custom-lg:text-xl hidden sm:block">
+                  Back
+                </h1>
               </div>
             )}
-            {activeSidebarItem === "My Sessions"&& (
-              <h1 className="text-[#685AAD]  text-sm sm:text-md custom-lg:text-4xl font-extrabold ml-0 sm:ml-6 absolute top-16 left-16 sm:static">My&nbsp;Sessions</h1>
+            {activeSidebarItem === "My Sessions" && (
+              <h1 className="text-[#685AAD]  text-sm sm:text-md custom-lg:text-4xl font-extrabold ml-0 sm:ml-6 absolute top-16 left-16 sm:static">
+                My&nbsp;Sessions
+              </h1>
             )}
           </div>
 
           <div
-            onClick={toggleProfile}
-            className="flex items-center space-x-4 relative -right-5 select-none "
+            ref={targetRef}
+            className="flex items-center space-x-4 relative -right-4 select-none "
           >
             {/* <Bell size={24} className="cursor-pointer text-darkBlue" /> */}
-            <div className="flex gap-6 mr-4">
-              <Image src={dark} alt="" className="w-5 h-5" />
-              <Image src={translate} alt="" className="w-5 h-5" />
-              <Image src={bell} alt="" className="w-5 h-5" />
-
+            <div className="flex gap-6 custom-2xl:gap-10 mr-2">
+              <Image src={dark} alt="" className="w-5 h-5 custom-2xl:w-6 custom-2xl:h-6" />
+              <Image src={translate} alt="" className="w-5 h-5 custom-2xl:w-6 custom-2xl:h-6" />
+              <Image src={bell} alt="" className="w-5 h-5 custom-2xl:w-6 custom-2xl:h-6" />
             </div>
 
-              {/* -------profile complete------- */}
-              {activeSidebarItem==="Dashboard" && (
-
-              <div className=" absolute mb-28 custom-xl:mb-8 hidden sm:block right-6 top-44 custom-lg:top-16  w-fit ">
-              <div className="flex  justify-between items-center">
-                <div>
-                  <h1 className="font-bold text-2xl   text-[#685AAD] pr-24">
-                    Complete&nbsp;your&nbsp;profile
-                  </h1>
+            {/* -------profile complete------- */}
+            {activeSidebarItem === "Dashboard" && (
+              <div className=" absolute mb-28 custom-xl:mb-8 hidden sm:block right-4 top-48 custom-lg:top-[8.9rem] custom-xl:top-[6.5rem] max-w-[20.5rem]  custom-xl:max-w-[26.5rem]  ">
+                <div className="flex  justify-between items-center">
+                  <div>
+                    <h1 className="font-bold text-xl custom-xl:text-3xl   text-[#685AAD] pr-2 custom-xl:pr-24">
+                      Complete&nbsp;your&nbsp;profile
+                    </h1>
+                  </div>
+                  <Image src={rightarrow} alt="" className="w-3 h-3" />
                 </div>
-                <Image src={rightarrow} alt="" className="w-3 h-3" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg text-[#685AAD] pb-1">Profile Status</span>
-                <div className="w-full bg-[#DBD8EF] h-2 rounded-full">
-                    <div className="w-[50%] h-full bg-[#00DAE5] rounded-full">
-
-                    </div>
+                <div className="flex flex-col">
+                  <span className="text-lg font-medium text-[#685AAD] pb-2">
+                    Profile Status
+                  </span>
+                  <div className="w-full bg-[#DBD8EF] h-2 rounded-full">
+                    <div className="w-[50%] h-full bg-[#00DAE5] rounded-full"></div>
+                  </div>
                 </div>
               </div>
-            </div>
-              )}
+            )}
 
+            <div
+            onClick={toggleProfile}
+              className={`flex bg-[#EDE8FA] hover:cursor-pointer  px-2 py-1 justify-between w-[9rem] custom-2xl:w-[12.5rem]   h-10 custom-2xl:h-11 items-center rounded-md ${
+                isProfileOpen ? "border border-[#685aad7a]" : "border-0"
+              }`}
+            >
+                <div className="w-6 custom-2xl:w-7 h-6 custom-2xl:h-7 bg-customOrange rounded-full"></div>
+              {/* <div className="flex items-center  w-full  gap-2 custom-2xl:gap-4">
 
+              </div> */}
+                <span className="text-sm custom-2xl:text-base font-bold text-[#685AAD]">
+                  YOUSSEF
+                </span>
 
-
-            <div className={`flex bg-[#EDE8FA] px-2 py-1 justify-between w-[9rem] h-10 items-center rounded-md ${isProfileOpen?"border border-[#685aad7a]":"border-0"}`}>
-              <div className="flex items-center gap-2">
-
-              <div className="w-6 h-6 bg-customOrange rounded-full"></div>
-             
-                <span className="text-sm font-bold text-[#685AAD]">YOUSSEF</span>
-              </div>
-              
-              {isProfileOpen?(
-                <ChevronUp size={18} className="cursor-pointer  text-[#685AAD] "/>
-                
-              ):(
-                
-                <ChevronDown size={18} className="cursor-pointer  text-[#685AAD] "/>
-              
+              {isProfileOpen ? (
+                <ChevronUp
+                  size={18}
+                  className="cursor-pointer  text-[#685AAD] "
+                />
+              ) : (
+                <ChevronDown
+                  size={18}
+                  className="cursor-pointer  text-[#685AAD] "
+                />
               )}
             </div>
             {isProfileOpen && (
-              <div className="absolute right-0 mt-2  bg-[#EDE8FA] font-bold rounded-md shadow-lg py-1 z-10 top-full w-[9rem] px-4 border border-[#685aad7a]">
+              <div className="absolute right-0 mt-2 hover:cursor-pointer  bg-[#EDE8FA] font-bold rounded-md shadow-lg py-1 z-10 top-full w-[9rem] custom-2xl:w-[12.5rem] px-4 border border-[#685aad7a]">
                 <a
                   href="#"
-                  className="block px-2 py-2 text-sm text-[#685AAD]  border-b border-[#685aad7a] "
+                  className="block px-2 py-2 custom-2xl:py-3 text-sm text-[#685AAD]  border-b border-[#685aad7a] "
                 >
                   Profile
                 </a>
                 <a
                   href="#"
-                  className="block px-2  py-2 text-sm text-[#685AAD]  border-b border-[#685aad7a]"
+                  className="block px-2  py-2 custom-2xl:py-3 text-sm text-[#685AAD]  border-b border-[#685aad7a]"
                 >
-                 Ryan
+                  Ryan
                 </a>
                 <a
-                  href="#"
-                  className="block px-2  py-2 text-sm text-[#685AAD]  border-b border-[#685aad7a]"
+                  onClick={()=> {setActiveSidebarItem('Settings'); setIsProfileOpen(false)}}
+                  className="block px-2  py-2 custom-2xl:py-3 text-sm text-[#685AAD]  border-b border-[#685aad7a] hover:cursor-pointer"
                 >
-                 Settings
+                  Settings
                 </a>
-                <a
-                  href="#"
-                  className="block px-2 py-2 text-sm text-[#685AAD] "
-                >
-                 Logout
+                <a 
+                onClick={()=>{Router.push('/')}}
+                 className="block px-2 py-2 custom-2xl:py-3 text-sm text-[#685AAD] ">
+                  Logout
                 </a>
               </div>
             )}
@@ -653,4 +669,3 @@ const SessionsDashboard = () => {
 };
 
 export default SessionsDashboard;
-
