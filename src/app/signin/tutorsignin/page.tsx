@@ -10,8 +10,9 @@ import Link from "next/link";
 import google from "../../../../public/googleicon.svg";
 import line from "../../../../../../public/assets/icons/line.svg";
 import { useRouter } from "next/navigation";
-function Page() {
 
+function Page() {
+  const router = useRouter()
 
   return (
     <div className='flex flex-col h-fit '>
@@ -59,7 +60,7 @@ function Page() {
           <div></div>
           
             <div
-            // onClick={handlenavigate}
+            onClick={()=>{router.push("/etutor")}}
               className={` bg-customBlue text-2xl text-white rounded-full w-full py-2  px-5 mt-14 border-darkBlue border cursor-pointer text-center lg:text-xl lg:py-2 mb:text-sm mb:p-2 mb:mt-2 `}
             >
               Continue

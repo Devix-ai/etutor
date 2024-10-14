@@ -460,9 +460,9 @@ const SessionsDashboard = () => {
                         setIsSidebarOpen(false);
                       }
                     }}
-                    className={`flex items-center w-full px-6 custom-2xl:px-9 py-3 sm:py-[18px] rounded-[22px]  transition-all  ${
+                    className={`flex   hover:shadow-[0px_0px_5px_1px_rgba(255,255,255,0.3)] hover:transition-all duration-1000  items-center w-full px-6 custom-2xl:px-9 py-3 sm:py-[18px] rounded-[22px]  transition-all  ${
                       activeSidebarItem === item.name
-                        ? "bg-white text-[#8552fb] transition-all"
+                        ? "bg-white  transition-all"
                         : "hover:bg-darkpurple transition-all"
                     }`}
                   >
@@ -478,9 +478,9 @@ const SessionsDashboard = () => {
                       }}
                     />
                     <p
-                      className={`text-[#cac7d8] text-xl ${
+                      className={`text-[#cac7d8] text-xl font-medium ${
                         activeSidebarItem === item.name
-                          ? "text-[#814dfc]"
+                          ? "text-customBlue"
                           : "text-[#cac7d8]"
                       }`}
                     >
@@ -504,7 +504,7 @@ const SessionsDashboard = () => {
                         setIsSidebarOpen(false);
                       }
                     }}
-                    className={`flex items-center w-full px-6 py-3 rounded-[19px] transition-colors ${
+                    className={`flex   hover:shadow-[0px_0px_5px_1px_rgba(255,255,255,0.3)] hover:transition-all duration-1000  items-center w-full px-6 custom-2xl:px-9 py-3 sm:py-[18px] rounded-[22px]  transition-all  ${
                       activeSidebarItem === item.name
                         ? "bg-white text-customBlue"
                         : "hover:bg-darkpurple"
@@ -512,7 +512,7 @@ const SessionsDashboard = () => {
                   >
                     <Image
                       src={item.icon}
-                      className="w-5 mr-6"
+                      className="w-5 sm:w-6 h-5 sm:h-6 mr-7"
                       alt=""
                       style={{
                         filter:
@@ -522,8 +522,8 @@ const SessionsDashboard = () => {
                       }}
                     />
                     <p
-                      className={`text-[#cac7d8] text-xl ${
-                        activeSidebarItem === item.name ? "text-[#8652ff]" : ""
+                      className={`text-[#cac7d8] text-xl font-medium ${
+                        activeSidebarItem === item.name ? "text-customBlue" : ""
                       }`}
                     >
                       {item.name}
@@ -568,7 +568,7 @@ const SessionsDashboard = () => {
               </div>
             )}
             {activeSidebarItem === "My Sessions" && (
-              <h1 className="text-[#685AAD]  text-sm sm:text-md custom-lg:text-4xl font-extrabold ml-0 sm:ml-6 absolute top-16 left-16 sm:static">
+              <h1 className="text-[#685AAD]  text-sm sm:text-md custom-lg:text-5xl  font-extrabold ml-0 sm:ml-6 absolute top-16 left-16 sm:static">
                 My&nbsp;Sessions
               </h1>
             )}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Management Calendar</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Use your preferred font */
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #e74c3c; /* Red background for the calendar */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #fff; /* White text for the title */
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .filter-label {
+            font-weight: bold;
+            margin-right: 5px;
+            color: #fff; /* White text for filter label */
+        }
+        .fc-daygrid-day {
+            display: grid;/* Set a fixed height for uniformity */
+            grid-template-columns: repeat(7,1fr);
+            grid-template-rows: repeat(7,1fr);
+            border: 2px solid blue;
+        }
+        .fc-daygrid-week {
+            display: flex; /* Use flexbox for week layout */
+            justify-content: space-between; /* Evenly space out the days */
+            margin-bottom: 20px; /* Space between weeks */
+        }
+        .session-label {
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .confirmed {
+            background-color: #9b59b6; /* Purple */
+        }
+        .unconfirmed {
+            background-color: #1abc9c; /* Green */
+        }
+        .canceled {
+            background-color: #e74c3c; /* Red */
+        }
+        .fc-daygrid-day.fc-day-today {
+            background-color: #f0e6ff; /* Light purple for today's date */
+        }
+        .fc-button {
+            background-color: #9b59b6; /* Button background color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .fc-button:hover {
+            background-color: #8e44ad; /* Darker purple on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>Session Management Calendar</h1>
+        <div>
+            <label class="filter-label">Month:</label>
+            <button id="prevMonth" class="fc-button">◀</button>
+            <span id="currentMonth">July 2024</span>
+            <button id="nextMonth" class="fc-button">▶</button>
+        </div>
+    </div>
+    <div id='calendar'></div>
+    
+    <script>
+        // Sample session data
+        const sessions = [
+            { title: 'Session 1', date: '2024-07-02', classNames: ['confirmed'] },
+            { title: 'Session 2', date: '2024-07-09', classNames: ['unconfirmed'] },
+            { title: 'Session 3', date: '2024-07-13', classNames: ['confirmed'] },
+            { title: 'Session 4', date: '2024-07-14', classNames: ['canceled'] },
+            { title: 'Session 5', date: '2024-07-19', classNames: ['canceled'] },
+            { title: 'Session 6', date: '2024-07-22', classNames: ['confirmed'] },
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarEl = document.getElementById('calendar');
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay',
+                },
+                events: sessions,
+                eventDidMount: function(info) {
+                    const sessionClass = info.event.classNames.join(' ');
+                    const sessionLabel = document.createElement('div');
+                    sessionLabel.innerHTML = info.event.title;
+                    sessionLabel.className = `session-label ${sessionClass}`;
+                    info.el.appendChild(sessionLabel);
+                }
+            });
+
+            calendar.render();
+
+            // Update current month display
+            function updateCurrentMonthDisplay() {
+                const currentDate = calendar.getDate();
+                document.getElementById('currentMonth').innerText = currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+            }
+
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                calendar.prev();
+                updateCurrentMonthDisplay();
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                calendar.next();
+                updateCurrentMonthDisplay();
+            });
+
+            updateCurrentMonthDisplay();
+        });
+    </script>
+</body>
+</html>
