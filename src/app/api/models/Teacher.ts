@@ -33,7 +33,6 @@ export interface ITeacher extends Document {
   };
   isApproved: boolean;
 }
-
 const TeacherSchema: Schema = new Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },  // Relates to User model
   contactInformation: {
@@ -70,6 +69,5 @@ const TeacherSchema: Schema = new Schema({
 }, {
   timestamps: true,
 });
-
 const TeacherModel = mongoose.models.Teacher || mongoose.model<ITeacher>('Teacher', TeacherSchema);
 export default TeacherModel;

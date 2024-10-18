@@ -2,7 +2,6 @@ import nodemailer from 'nodemailer';
 
 export async function sendVerificationEmail(email: string, token: string) {
   const transporter = nodemailer.createTransport({
-    // Your SMTP configuration
     host: 'sandbox.smtp.mailtrap.io',
     port: 587,
     auth: {

@@ -23,11 +23,11 @@ export async function GET() {
     await connectMongoDB();  
   
     try {
-        const { email, isApproved } = await req.json(); // Expecting email and isApproved in the body
+        const { email, isApproved } = await req.json();
 
         const teacher = await TeacherModel.findOneAndUpdate(
             { 'contactInformation.email': email }, 
-            { isApproved }, // Update the isApproved status
+            { isApproved },
             { new: true } 
         );
   
@@ -39,7 +39,7 @@ export async function GET() {
             message: 'Teacher status updated successfully',
             teacher: {
                 email: teacher.contactInformation.email,
-                isApproved: teacher.isApproved, // Return updated status
+                isApproved: teacher.isApproved, 
             },
         }, { status: 200 });
     } catch (error) {

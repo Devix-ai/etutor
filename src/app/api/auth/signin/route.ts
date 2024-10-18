@@ -18,17 +18,13 @@ export async function POST(req: Request) {
     if (!user) {
       return NextResponse.json({ message: 'Invalid email or password' }, { status: 401 });
     }
-
-    // Check if the user is verified
     if (!user.verified) {
       return NextResponse.json({ message: 'Please verify your account' }, { status: 403 });
     }
-
     const isPasswordValid = await compare(password, user.password);
     if (!isPasswordValid) {
       return NextResponse.json({ message: 'Invalid email or password' }, { status: 401 });
     }
-
     return NextResponse.json({ message: 'Signin successful', userId: user._id, role: user.role }, { status: 200 });
   } catch (error) {
     console.error('Error during sign-in:', error);

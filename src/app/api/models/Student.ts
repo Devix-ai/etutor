@@ -18,8 +18,6 @@ export interface IStudent extends Document {
   lastName: string;
   phoneNumber: string;
 }
-
-// Define the StudentSchema
 const StudentSchema: Schema = new Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   levelOfStudy: { type: String, required: true },

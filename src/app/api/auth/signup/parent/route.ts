@@ -10,9 +10,14 @@ export async function POST(req: Request) {
     try {
         const { email, password, parent } = await req.json();
         console.log('Request data:', { email, password, parent });
-        if (!email || !password || !parent || !parent.firstName || !parent.lastName || !parent.levelOfStudy || !parent.grade) {
-            console.error('Validation failed: Missing fields');
-            return NextResponse.json({ message: 'Missing fields' }, { status: 422 });
+
+        // Validate required fields
+        const requiredFields = ['firstName', 'lastName', 'levelOfStudy', 'grade', 'availability', 'phoneNumber'];
+        for (const field of requiredFields) {
+            if (!parent[field]) {
+                console.error(`Validation failed: Missing field ${field}`);
+                return NextResponse.json({ message: `Missing field: ${field}` }, { status: 422 });
+            }
         }
 
         await connectMongoDB();
@@ -21,6 +26,7 @@ export async function POST(req: Request) {
             console.error('User already exists:', email);
             return NextResponse.json({ message: 'User already exists' }, { status: 422 });
         }
+        
         const hashedPassword = await hash(password, 12);
         const newUser = new UserModel({
             email,
@@ -31,11 +37,14 @@ export async function POST(req: Request) {
         const savedUser = await newUser.save();
         const newParent = new ParentModel({
             user: savedUser._id,
-            levelOfStudy: parent.levelOfStudy,
+            gradeLevel: parent.gradeLevel, // Ensure this matches your interface/schema
             grade: parent.grade,
-            subjects: parent.subjects,
+            levelOfStudy: parent.levelOfStudy,
+            subjectChildNeeds: parent.subjectChildNeeds, // Correct this to match your schema
             additionalInformation: parent.additionalInformation,
             availability: parent.availability,
+            childInformation: parent.childInformation, // Add this if required
+            parentPersonalInformation: parent.parentPersonalInformation, // Add this if required
             firstName: parent.firstName,
             lastName: parent.lastName,
             phoneNumber: parent.phoneNumber,
@@ -56,9 +65,11 @@ export async function POST(req: Request) {
             secret,
             { expiresIn: '1h' }
         );
+
         await sendVerificationEmail(savedUser.email, token).catch(error => {
             console.error('Error sending verification email:', error);
         });
+
         return NextResponse.json({ message: 'Parent created. Please check your email to verify your account.' }, { status: 201 });
     } catch (error: unknown) {
         if (error instanceof Error) {

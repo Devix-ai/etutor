@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { NextRequest } from 'next/server';
-import { Token } from './types/Token';
+import { Token } from '../types/Token';
 
 export async function middleware(req: NextRequest) {
     const token = (await getToken({ req })) as Token | null; // Type assertion here
