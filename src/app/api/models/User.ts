@@ -1,22 +1,20 @@
-// models/User.ts
 import mongoose, { Document, Schema } from 'mongoose';
 
-export interface User {
-  _id: mongoose.Types.ObjectId;
+export interface IUser extends Document {
   email: string;
   password: string;
   role: string;
-  verified: boolean; //to check either the user is verified or not
+  verified: boolean;
 }
 
-const UserSchema = new Schema<User & Document>({
+const UserSchema: Schema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, required: true },
-  verified: { type: Boolean, default: false }, 
+  verified: { type: Boolean, default: false },  
 }, {
   timestamps: true,
 });
 
-const UserModel = mongoose.models.User || mongoose.model<User & Document>('User', UserSchema);
+const UserModel = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
 export default UserModel;

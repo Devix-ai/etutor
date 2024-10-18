@@ -1,27 +1,23 @@
 import nodemailer from 'nodemailer';
 
-export const sendVerificationEmail = async (email: string, token: string) => {
+export async function sendVerificationEmail(email: string, token: string) {
   const transporter = nodemailer.createTransport({
+    // Your SMTP configuration
     host: 'sandbox.smtp.mailtrap.io',
     port: 587,
     auth: {
-      user: process.env.MAIL_USERNAME, // Mailtrap username
-      pass: process.env.MAIL_PASSWORD, // Mailtrap password
+      user: process.env.MAIL_USERNAME,
+      pass: process.env.MAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: process.env.MAIL_FROM_ADDRESS, // Mailtrap sender email
+    from: process.env.MAIL_FROM_ADDRESS,
     to: email,
-    subject: 'Verify your email',
-    text: `Click the link below to verify your email: \n\n ${process.env.BASE_URL}/api/auth/verify?token=${token}`,
+    subject: 'Account Verification',
+    text: `Please verify your account by clicking this link: ${process.env.FRONTEND_URL}/verify?token=${token}`,
+    html: `<p>Please verify your account by clicking this link: <a href="${process.env.FRONTEND_URL}/verify?token=${token}">${process.env.FRONTEND_URL}/verify?token=${token}</a></p>`,
   };
-
-  try {
-    await transporter.sendMail(mailOptions);
-    console.log('Verification email sent');
-  } catch (error) {
-    console.error('Error sending email:', error);
-    throw new Error('Could not send email');
-  }
-};
+  
+  return transporter.sendMail(mailOptions);
+}
